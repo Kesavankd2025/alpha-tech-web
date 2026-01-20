@@ -1,0 +1,199 @@
+{
+    "o-rings": {
+        "title": "O-Rings & Quad Rings",
+        "description": "O-Rings are mostly used as a static seals in-between flanges or joint sealing.",
+        "image": "/img/products/orings-main.png",
+        "specs": [
+            {
+                "partNo": "OR13000100-64",
+                "id": "1.00",
+                "od": "3.60",
+                "thk": "1.30",
+                "material": "FKM",
+                "mouldNo": "SIA-2374"
+            },
+            {
+                "partNo": "OR13000100-08",
+                "id": "1.00",
+                "od": "3.60",
+                "thk": "1.30",
+                "material": "NBR",
+                "mouldNo": "SIA-3878"
+            },
+            {
+                "partNo": "OR15000100-43",
+                "id": "1.00",
+                "od": "4.00",
+                "thk": "1.50",
+                "material": "SILICON",
+                "mouldNo": "SIA-4245"
+            },
+            {
+                "partNo": "OR16000100-32",
+                "id": "1.00",
+                "od": "4.20",
+                "thk": "1.60",
+                "material": "EPDM",
+                "mouldNo": "SIA-2807"
+            },
+            {
+                "partNo": "OR17800178-01",
+                "id": "1.78",
+                "od": "5.34",
+                "thk": "1.78",
+                "material": "VITON",
+                "mouldNo": "SIA-1102"
+            },
+            {
+                "partNo": "OR20000200-12",
+                "id": "2.00",
+                "od": "6.00",
+                "thk": "2.00",
+                "material": "NBR",
+                "mouldNo": "SIA-1567"
+            },
+            {
+                "partNo": "OR24000240-55",
+                "id": "2.40",
+                "od": "7.20",
+                "thk": "2.40",
+                "material": "SILICON",
+                "mouldNo": "SIA-3982"
+            },
+            {
+                "partNo": "OR26200262-99",
+                "id": "2.62",
+                "od": "7.86",
+                "thk": "2.62",
+                "material": "EPDM",
+                "mouldNo": "SIA-8834"
+            }
+        ]
+    },
+    "oil-seals": {
+        "title": "Oil Seals",
+        "description": "High-quality rotary shaft oil seals for effective sealing of lubricants.",
+        "specs": []
+    },
+    "hydraulic-seals": {
+        "title": "Hydraulic Seals",
+        "description": "Engineered for high-pressure hydraulic cylinders and systems.",
+        "specs": []
+    },
+    "seals": {
+        "title": "Industrial Seals",
+        "description": "Comprehensive range of sealing solutions for various industrial applications.",
+        "specs": [
+            {
+                "partNo": "GEN-SEAL-01",
+                "id": "-",
+                "od": "-",
+                "thk": "-",
+                "material": "NBR",
+                "mouldNo": "-"
+            }
+        ]
+    },
+    "wheel-stoppers": {
+        "title": "Wheel Stoppers",
+        "description": "Heavy-duty rubber wheel stoppers designed for parking safety and vehicle positioning.",
+        "image": "/img/products/wheel-stopper.png",
+        "specs": [
+            {
+                "partNo": "DH-PB-5",
+                "desc": "Rubber Wheel Stopper - 50cm",
+                "size": "500x150x100mm",
+                "weight": "4.5kg",
+                "material": "Rubber",
+                "pcs": "316"
+            },
+            {
+                "partNo": "DH-PB-2",
+                "desc": "Rubber Wheel Stopper - 2mtr",
+                "size": "2000x150x100mm",
+                "weight": "16kg",
+                "material": "Rubber",
+                "pcs": "6"
+            },
+            {
+                "partNo": "PB-4-550",
+                "desc": "Wheel Stopper Heavy Duty",
+                "size": "550x150x100mm",
+                "weight": "5kg",
+                "material": "Rubber",
+                "pcs": "395"
+            }
+        ]
+    },
+    "speed-humps": {
+        "title": "Speed Humps",
+        "description": "Durable rubber speed humps for traffic calming and safety.",
+        "specs": [
+            {
+                "partNo": "SP-H-50",
+                "desc": "Standard Speed Hump",
+                "size": "500x350x50mm",
+                "weight": "12kg",
+                "material": "Rubber"
+            }
+        ]
+    },
+    "corner-guards": {
+        "title": "Corner Guards",
+        "description": "Protective rubber guards for columns and wall corners.",
+        "specs": []
+    },
+    "wall-guards": {
+        "title": "Wall Guards",
+        "description": "Impact protection for industrial and parking walls.",
+        "specs": []
+    },
+    "bps": {
+        "title": "BPS Safety Products",
+        "description": "Building protection systems and traffic safety equipment.",
+        "specs": [
+            {
+                "partNo": "BPS-GEN-01",
+                "desc": "General BPS Item",
+                "size": "-",
+                "weight": "-",
+                "material": "Rubber"
+            }
+        ]
+    },
+    "rubber-sheets": {
+        "title": "Rubber Sheets",
+        "description": "Industrial grade rubber sheets for gasketing and flooring.",
+        "specs": [
+            {
+                "partNo": "RS-NBR-2MM",
+                "desc": "NBR Rubber Sheet",
+                "size": "1.2m x 10m",
+                "thk": "2mm",
+                "material": "NBR"
+            },
+            {
+                "partNo": "RS-NEO-3MM",
+                "desc": "Neoprene Rubber Sheet",
+                "size": "1.2m x 10m",
+                "thk": "3mm",
+                "material": "Neoprene"
+            }
+        ]
+    },
+    "mats": {
+        "title": "Rubber Mats",
+        "description": "Anti-slip and anti-fatigue mats for industrial use.",
+        "specs": []
+    },
+    "custom-rubber": {
+        "title": "Custom Rubber Parts",
+        "description": "Bespoke molded rubber components to your specifications.",
+        "specs": []
+    },
+    "rubber": {
+        "title": "Rubber Products",
+        "description": "Wide range of rubber sheets, mats, and molded products.",
+        "specs": []
+    }
+}
