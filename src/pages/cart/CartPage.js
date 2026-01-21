@@ -66,25 +66,14 @@ const CartPage = () => {
 
                                             {/* Quantity Controls */}
                                             <div className="d-flex align-items-center">
-                                                <div className="input-group input-group-sm quantity-control" style={{ width: '110px' }}>
-                                                    <button
-                                                        className="btn btn-outline-secondary border-end-0"
-                                                        type="button"
-                                                        onClick={() => handleQuantityChange(item.id, item.quantity - 1)}
-                                                        disabled={item.quantity <= 1}
-                                                    >-</button>
-                                                    <input
-                                                        type="text"
-                                                        className="form-control text-center bg-white border-start-0 border-end-0"
-                                                        value={item.quantity}
-                                                        readOnly
-                                                    />
-                                                    <button
-                                                        className="btn btn-outline-secondary border-start-0"
-                                                        type="button"
-                                                        onClick={() => handleQuantityChange(item.id, item.quantity + 1)}
-                                                    >+</button>
-                                                </div>
+                                                <input
+                                                    type="number"
+                                                    className="form-control form-control-sm text-center border-secondary-subtle"
+                                                    value={item.quantity}
+                                                    min="1"
+                                                    onChange={(e) => handleQuantityChange(item.id, e.target.value)}
+                                                    style={{ width: '70px' }}
+                                                />
                                             </div>
 
                                             {/* Remove Button */}

@@ -105,11 +105,11 @@ const HomePage = () => {
                 <div className="container text-center" style={{ maxWidth: '1000px' }}>
                     <div className="d-flex align-items-center justify-content-center mb-4">
                         <div style={{ height: '2px', width: '50px', backgroundColor: 'var(--accent-color)', marginRight: '15px' }}></div>
-                        <h3 className="text-uppercase text-secondary fw-bold letter-spacing-2 mb-0">Certified Excellence</h3>
+                        <h3 className="text-uppercase fw-bold letter-spacing-2 mb-0" style={{ color: 'var(--primary-color)' }}>Certified Excellence</h3>
                         <div style={{ height: '2px', width: '50px', backgroundColor: 'var(--accent-color)', marginLeft: '15px' }}></div>
                     </div>
 
-                    <p className="text-secondary fs-6 mb-5 mx-auto" style={{ maxWidth: '700px' }}>
+                    <p className="fs-6 mb-5 mx-auto" style={{ maxWidth: '700px' }}>
                         Committed to international quality standards (ISO 9001:2015) and secure supply chain management (AEO Certified).
                     </p>
 
@@ -121,7 +121,7 @@ const HomePage = () => {
                                     <img src="/img/certificates/cert-2.jpg" alt="ISO 9001:2015" className="img-fluid" style={{ maxHeight: '140px', objectFit: 'contain' }} />
                                 </div>
                                 <h5 className="fw-bold text-dark mb-1">ISO 9001:2015</h5>
-                                <p className="text-secondary small mb-0">Quality Management System</p>
+                                <p className=" small mb-0">Quality Management System</p>
                             </div>
                         </div>
 
@@ -132,7 +132,7 @@ const HomePage = () => {
                                     <img src="/img/certificates/cert-1.jpg" alt="AEO Certified" className="img-fluid" style={{ maxHeight: '140px', objectFit: 'contain' }} />
                                 </div>
                                 <h5 className="fw-bold text-dark mb-1">AEO Certified</h5>
-                                <p className="text-secondary small mb-0">Authorised Economic Operator</p>
+                                <p className=" small mb-0">Authorised Economic Operator</p>
                             </div>
                         </div>
                     </div>
@@ -227,7 +227,7 @@ const HomePage = () => {
                                         <i className={`bi ${feat.icon}`}></i>
                                     </div>
                                     <h5 className="fw-bold">{feat.title}</h5>
-                                    <p className="text-secondary small">Commitment to excellence in every order.</p>
+                                    <p className=" small">Commitment to excellence in every order.</p>
                                 </div>
                             </div>
                         ))}

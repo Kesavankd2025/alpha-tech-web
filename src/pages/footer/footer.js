@@ -22,7 +22,8 @@ const FooterPage = () => {
                         <p className="footer-company-desc mb-4 text-start">
                             Specializing in high-performance rubber products for industrial applications since 2005. We deliver quality, durability, and innovation for demanding industries worldwide.
                         </p>
-                        <div className="social-icons d-flex gap-3 justify-content-start">
+
+                        <div className="social-icons d-flex gap-3 justify-content-start" style={{ paddingTop: "15px" }}>
                             <a href="#" className="social-btn facebook"><i className="bi bi-facebook"></i></a>
                             <a href="#" className="social-btn twitter"><i className="bi bi-twitter-x"></i></a>
                             <a href="#" className="social-btn linkedin"><i className="bi bi-linkedin"></i></a>
@@ -34,12 +35,12 @@ const FooterPage = () => {
                     <div className="col-lg-2 col-md-6">
                         <h5 className="footer-heading mb-4 text-start">Quick Links</h5>
                         <ul className="list-unstyled footer-links text-start">
-                            <li><Link to="/">Home</Link></li>
-                            <li><Link to="/products">Products</Link></li>
-                            <li><Link to="/applications">Applications</Link></li>
-                            <li><Link to="/resources">Resources</Link></li>
-                            <li><Link to="/about">About Us</Link></li>
-                            <li><Link to="/contact">Contact Us</Link></li>
+                            <li><Link to="/" onClick={() => window.scrollTo(0, 0)}>Home</Link></li>
+                            <li><Link to="/products" onClick={() => window.scrollTo(0, 0)}>Products</Link></li>
+                            <li><Link to="/about" onClick={() => window.scrollTo(0, 0)}>About Us</Link></li>
+                            <li><Link to="/applications" onClick={() => window.scrollTo(0, 0)}>Applications</Link></li>
+                            <li><Link to="/resources" onClick={() => window.scrollTo(0, 0)}>Resources</Link></li>
+                            <li><Link to="/contact" onClick={() => window.scrollTo(0, 0)}>Contact Us</Link></li>
                         </ul>
                     </div>
 

@@ -52,7 +52,9 @@ const ProductListing = () => {
             quantity: qty,
             image: productData.image || "/img/product-seal-1.png"
         }));
-        toast.success(`Added ${qty} x ${item.partNo} to cart!`);
+        toast.success(`Added ${qty} x ${item.partNo} to cart!`, {
+            style: { boxShadow: 'none', border: '1px solid #e2e8f0' }
+        });
     };
 
     if (!productData) return (
@@ -145,62 +147,54 @@ const ProductListing = () => {
                             <h4 className="mb-1 fw-bold text-primary">Technical Specifications</h4>
                             <p className="mb-0 text-muted small">Select your required size and material below.</p>
                         </div>
-                        {/* Potential place for a search input */}
-                        <div className="input-group" style={{ maxWidth: '300px' }}>
-                            <span className="input-group-text bg-light border-end-0"><i className="bi bi-search text-muted"></i></span>
-                            <input type="text" className="form-control bg-light border-start-0" placeholder="Search Part No..." disabled />
-                        </div>
                     </div>
                     <div className="table-responsive">
                         <table className="table table-hover align-middle mb-0 custom-table">
-                            <thead className="bg-light text-secondary small text-uppercase fw-bold">
+                            <thead className="text-white small text-uppercase fw-bold" style={{ backgroundColor: 'var(--primary-color)' }}>
                                 <tr>
-                                    <th className="py-3 ps-4 border-bottom-0">Part No.</th>
-                                    <th className="border-bottom-0">ID (mm)</th>
-                                    <th className="border-bottom-0">OD (mm)</th>
-                                    <th className="border-bottom-0">Thk (mm)</th>
-                                    <th className="border-bottom-0">Material</th>
-                                    <th className="border-bottom-0">Mould No.</th>
-                                    <th className="border-bottom-0 text-center" style={{ width: '160px' }}>Quantity</th>
-                                    <th className="pe-4 text-end border-bottom-0">Action</th>
+                                    <th className="py-3 ps-4 border-bottom-0" style={{ backgroundColor: '#e3f2fd', color: 'var(--primary-color)' }}>Part No.</th>
+                                    <th className="py-3 border-bottom-0" style={{ backgroundColor: '#e3f2fd', color: 'var(--primary-color)' }}>ID (mm)</th>
+                                    <th className="py-3 border-bottom-0" style={{ backgroundColor: '#e3f2fd', color: 'var(--primary-color)' }}>OD (mm)</th>
+                                    <th className="py-3 border-bottom-0" style={{ backgroundColor: '#e3f2fd', color: 'var(--primary-color)' }}>Thk (mm)</th>
+                                    <th className="py-3 border-bottom-0" style={{ backgroundColor: '#e3f2fd', color: 'var(--primary-color)' }}>Material</th>
+                                    <th className="py-3 border-bottom-0" style={{ backgroundColor: '#e3f2fd', color: 'var(--primary-color)' }}>Mould No.</th>
+                                    <th className="py-3 border-bottom-0 text-center" style={{ width: '100px', backgroundColor: '#e3f2fd', color: 'var(--primary-color)' }}>Quantity</th>
+                                    <th className="py-3 pe-4 text-center border-bottom-0" style={{ backgroundColor: '#e3f2fd', color: 'var(--primary-color)' }}>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {productData.specs && productData.specs.length > 0 ? (
                                     productData.specs.map((item, index) => (
                                         <tr key={index} className="group-item">
-                                            <td className="fw-bold ps-4 text-primary font-monospace">{item.partNo}</td>
+                                            <td className="fw-bold ps-4 font-monospace" style={{ backgroundColor: '#e3f2fd', color: 'var(--primary-color)' }}>{item.partNo}</td>
                                             <td className="fw-medium">{item.id || '-'}</td>
                                             <td className="fw-medium">{item.od || '-'}</td>
                                             <td className="fw-medium">{item.thk || '-'}</td>
                                             <td>
                                                 <span className="badge fw-medium px-3 py-2 rounded-pill"
                                                     style={{
-                                                        backgroundColor: typeof item.material === 'string' && item.material.includes('NBR') ? '#e3f2fd' : '#c76320ff',
-                                                        color: typeof item.material === 'string' && item.material.includes('NBR') ? '#ecececff' : '#ffffffff'
+                                                        backgroundColor: 'var(--accent-color)',
+                                                        color: '#ffffff'
                                                     }}>
                                                     {item.material || 'Standard'}
                                                 </span>
                                             </td>
                                             <td className="text-muted small font-monospace">{item.mouldNo || 'N/A'}</td>
                                             <td>
-                                                <div className="input-group input-group-sm quantity-control mx-auto" style={{ width: '120px' }}>
-                                                    <button className="btn btn-outline-secondary" type="button" onClick={() => decrementQty(item.partNo)}>-</button>
-                                                    <input
-                                                        type="number"
-                                                        className="form-control text-center border-secondary-subtle"
-                                                        min="1"
-                                                        value={quantities[item.partNo] || 1}
-                                                        onChange={(e) => handleQuantityChange(item.partNo, e.target.value)}
-                                                    />
-                                                    <button className="btn btn-outline-secondary" type="button" onClick={() => incrementQty(item.partNo)}>+</button>
-                                                </div>
+                                                <input
+                                                    type="number"
+                                                    className="form-control form-control-sm text-center border-secondary-subtle mx-auto"
+                                                    min="1"
+                                                    style={{ width: '70px' }}
+                                                    value={quantities[item.partNo] || 1}
+                                                    onChange={(e) => handleQuantityChange(item.partNo, e.target.value)}
+                                                />
                                             </td>
-                                            <td className="pe-4 text-end">
+                                            <td className="pe-4 text-center">
                                                 <button
-                                                    className="btn btn-sm fw-bold text-white d-inline-flex align-items-center shadow-sm"
+                                                    className="btn btn-sm fw-bold d-inline-flex align-items-center shadow-none btn-add-cart"
                                                     onClick={() => handleAddToCart(item)}
-                                                    style={{ backgroundColor: 'var(--primary-color)', borderColor: 'var(--primary-color)', padding: '0.4rem 1.2rem' }}
+                                                    style={{ padding: '0.4rem 1.2rem' }}
                                                 >
                                                     <i className="bi bi-cart-plus me-2"></i> Add
                                                 </button>
@@ -228,6 +222,10 @@ const ProductListing = () => {
                 .custom-table tbody tr {
                     transition: background-color 0.2s ease;
                 }
+                
+                .custom-table tbody tr:hover td:not(:first-child) {
+                    background-color: #e3f2fd;
+                }
 
                 .input-group.quantity-control .btn {
                     border-color: #dee2e6;
@@ -237,9 +235,22 @@ const ProductListing = () => {
                     background-color: #f1f3f5;
                     color: var(--primary-color);
                 }
+
+                .btn-add-cart {
+                    background-color: transparent;
+                    border: 2px solid var(--accent-color);
+                    color: var(--accent-color);
+                    transition: all 0.3s ease;
+                }
+
+                .btn-add-cart:hover {
+                    background-color: var(--primary-color);
+                    border-color: var(--primary-color);
+                    color: white;
+                }
                 `}
             </style>
-        </div>
+        </div >
     );
 };
 

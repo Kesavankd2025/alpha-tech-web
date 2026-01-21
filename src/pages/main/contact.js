@@ -64,17 +64,17 @@ const ContactPage = () => {
                 <div className="row g-5">
                     {/* Left Side: Contact Info */}
                     <div className="col-lg-5" data-aos="fade-right">
-                        <div className="bg-white p-4 rounded shadow-sm h-100 border">
-                            <h3 className="fw-bold mb-4 text-primary">Get in Touch</h3>
-                            <p className="text-muted mb-4">
+                        <div className="bg-white p-4 rounded shadow-sm h-100 border text-start">
+                            <h3 className="fw-bold mb-3 text-primary">Get in Touch</h3>
+                            <p className="text-muted mb-3">
                                 Fill out the form or reach us via the details below. Our technical team is ready to assist you.
                             </p>
 
-                            <div className="d-flex mb-4">
-                                <div className="flex-shrink-0 bg-light p-3 rounded text-primary">
-                                    <i className="bi bi-geo-alt fs-4"></i>
+                            <div className="d-flex mb-3">
+                                <div className="flex-shrink-0 bg-light p-2 rounded text-primary d-flex align-items-center justify-content-center" style={{ width: '40px', height: '40px' }}>
+                                    <i className="bi bi-geo-alt fs-5"></i>
                                 </div>
-                                <div className="ms-3">
+                                <div className="ms-3 text-start">
                                     <h6 className="fw-bold mb-1">Headquarters</h6>
                                     <p className="text-muted small mb-0">
                                         Alpha Technical Rubber Products W.L.L<br />
@@ -84,11 +84,11 @@ const ContactPage = () => {
                                 </div>
                             </div>
 
-                            <div className="d-flex mb-4">
-                                <div className="flex-shrink-0 bg-light p-3 rounded text-primary">
-                                    <i className="bi bi-envelope fs-4"></i>
+                            <div className="d-flex mb-3">
+                                <div className="flex-shrink-0 bg-light p-2 rounded text-primary d-flex align-items-center justify-content-center" style={{ width: '40px', height: '40px' }}>
+                                    <i className="bi bi-envelope fs-5"></i>
                                 </div>
-                                <div className="ms-3">
+                                <div className="ms-3 text-start">
                                     <h6 className="fw-bold mb-1">Email Us</h6>
                                     <p className="text-muted small mb-0">
                                         sales@alphatechrubber.com<br />
@@ -97,11 +97,11 @@ const ContactPage = () => {
                                 </div>
                             </div>
 
-                            <div className="d-flex mb-4">
-                                <div className="flex-shrink-0 bg-light p-3 rounded text-primary">
-                                    <i className="bi bi-telephone fs-4"></i>
+                            <div className="d-flex mb-3">
+                                <div className="flex-shrink-0 bg-light p-2 rounded text-primary d-flex align-items-center justify-content-center" style={{ width: '40px', height: '40px' }}>
+                                    <i className="bi bi-telephone fs-5"></i>
                                 </div>
-                                <div className="ms-3">
+                                <div className="ms-3 text-start">
                                     <h6 className="fw-bold mb-1">Call Us</h6>
                                     <p className="text-muted small mb-0">
                                         +973 1700 6820<br />
@@ -114,8 +114,8 @@ const ContactPage = () => {
 
                     {/* Right Side: Form */}
                     <div className="col-lg-7" data-aos="fade-left">
-                        <div className="bg-white p-5 rounded shadow-lg border-top border-4" style={{ borderColor: 'var(--accent-color)' }}>
-                            <h3 className="fw-bold mb-4 text-primary">Send us a Message</h3>
+                        <div className="bg-white p-4 rounded shadow-lg border-top border-4" style={{ borderColor: 'var(--accent-color)' }}>
+                            <h3 className="fw-bold mb-3 text-primary">Send us a Message</h3>
 
                             <Formik
                                 initialValues={{
@@ -134,7 +134,7 @@ const ContactPage = () => {
                                 {({ values, errors, touched, handleChange, handleBlur }) => (
                                     <Form>
                                         <div className="row g-3">
-                                            <div className="col-md-6">
+                                            <div className="col-md-6" style={{ textAlign: "left" }}>
                                                 <label className="form-label fw-bold small">Full Name</label>
                                                 <input
                                                     name="fullName"
@@ -147,7 +147,7 @@ const ContactPage = () => {
                                                 />
                                                 {errors.fullName && touched.fullName && <div className="invalid-feedback">{errors.fullName}</div>}
                                             </div>
-                                            <div className="col-md-6">
+                                            <div className="col-md-6" style={{ textAlign: "left" }}>
                                                 <label className="form-label fw-bold small">Phone Number</label>
                                                 <input
                                                     name="phoneNo"
@@ -160,7 +160,7 @@ const ContactPage = () => {
                                                 />
                                                 {errors.phoneNo && touched.phoneNo && <div className="invalid-feedback">{errors.phoneNo}</div>}
                                             </div>
-                                            <div className="col-md-6">
+                                            <div className="col-md-6" style={{ textAlign: "left" }}>
                                                 <label className="form-label fw-bold small">Email Address</label>
                                                 <input
                                                     name="email"
@@ -173,7 +173,7 @@ const ContactPage = () => {
                                                 />
                                                 {errors.email && touched.email && <div className="invalid-feedback">{errors.email}</div>}
                                             </div>
-                                            <div className="col-md-6">
+                                            <div className="col-md-6" style={{ textAlign: "left" }}>
                                                 <label className="form-label fw-bold small">Country</label>
                                                 <select
                                                     className={`form-select ${errors.country && touched.country ? 'is-invalid' : ''}`}
@@ -189,7 +189,7 @@ const ContactPage = () => {
                                                 </select>
                                                 {errors.country && touched.country && <div className="invalid-feedback">{errors.country}</div>}
                                             </div>
-                                            <div className="col-12">
+                                            <div className="col-12" style={{ textAlign: "left" }}>
                                                 <label className="form-label fw-bold small">Message</label>
                                                 <textarea
                                                     name="message"
@@ -197,11 +197,11 @@ const ContactPage = () => {
                                                     onBlur={handleBlur}
                                                     value={values.message}
                                                     className="form-control"
-                                                    rows="5"
+                                                    rows="3"
                                                     placeholder="How can we help you?"
                                                 ></textarea>
                                             </div>
-                                            <div className="col-12 mt-4">
+                                            <div className="col-12 mt-3">
                                                 <button type="submit" className="btn btn-primary w-100 fw-bold py-3" style={{ backgroundColor: 'var(--accent-color)', borderColor: 'var(--accent-color)' }}>
                                                     Send Message
                                                 </button>
