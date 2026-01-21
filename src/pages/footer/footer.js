@@ -36,9 +36,9 @@ const FooterPage = () => {
                         <ul className="list-unstyled footer-links text-start">
                             <li><Link to="/">Home</Link></li>
                             <li><Link to="/products">Products</Link></li>
-                            <li><Link to="/about">About Us</Link></li>
                             <li><Link to="/applications">Applications</Link></li>
                             <li><Link to="/resources">Resources</Link></li>
+                            <li><Link to="/about">About Us</Link></li>
                             <li><Link to="/contact">Contact Us</Link></li>
                         </ul>
                     </div>
