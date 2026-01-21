@@ -68,7 +68,8 @@ h6 {
 }
 
 
-.industrial-navbar .nav-link:hover {
+.industrial-navbar .nav-link:hover,
+.industrial-navbar .nav-link.active {
   color: var(--accent-color) !important;
 }
 

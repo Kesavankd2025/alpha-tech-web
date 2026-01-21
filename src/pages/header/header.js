@@ -64,7 +64,7 @@ const Header = () => {
                     {/* 2. Center: Navigation Links */}
                     <ul className="navbar-nav mx-auto mb-2 mb-lg-0 align-items-center">
                         <li className="nav-item">
-                            <NavLink className="nav-link" to="/">{translateSync('Home')}</NavLink>
+                            <NavLink className="nav-link" to="/" end>{translateSync('Home')}</NavLink>
                         </li>
 
                         {/* Products Mega Menu */}
@@ -74,7 +74,7 @@ const Header = () => {
                             onMouseLeave={() => setShowMegaMenu(false)}
                         >
                             <a
-                                className="nav-link dropdown-toggle"
+                                className={`nav-link dropdown-toggle ${location.pathname.startsWith('/products') ? 'active' : ''}`}
                                 href="#"
                                 id="navbarDropdown"
                                 role="button"

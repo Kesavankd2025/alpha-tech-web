@@ -279,7 +279,7 @@ const HomePage = () => {
                     </div>
                     <div className="row g-0 shadow-lg overflow-hidden rounded" data-aos="fade-up">
                         <div className="col-lg-6 position-relative" style={{ minHeight: '500px' }}>
-                            <img src="/img/banner-2.jpg" alt="Factory" className="img-fluid w-100 h-100" style={{ objectFit: 'cover' }} />
+                            <img src="/img/about-section-home.png" alt="Factory" className="img-fluid w-100 h-100" style={{ objectFit: 'cover' }} />
                             <div className="position-absolute top-0 start-0 w-100 h-100" style={{ background: 'rgba(0,0,0,0.1)' }}></div>
                         </div>
                         <div className="col-lg-6 d-flex align-items-center" style={{ backgroundColor: 'var(--primary-color)', color: 'white' }}>
