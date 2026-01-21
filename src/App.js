@@ -1,6 +1,5 @@
 import logo from './logo.svg';
 import './App.css';
-import './industrial-theme.css';
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Header from './pages/header/header';
 import HomePage from './pages/main/home';
@@ -33,6 +32,9 @@ import CourseCalendar from './pages/main/calendarone';
 import CorporateForm from './pages/main/corporateForm';
 import TermsPage from './pages/main/terms';
 import PrivacyPage from './pages/main/privacy';
+import ApplicationsPage from './pages/main/applications';
+import ResourcesPage from './pages/main/resources';
+
 // import CookieConsent from './pages/CookieConsent '; // Removed
 import { useTranslation } from './context/TranslationContext';
 // import LanguageSwitcher from './components/LanguageSwitcher';
@@ -59,24 +61,27 @@ function App() {
         <Route exact path="/terms" element={<TermsPage />} />
         <Route exact path="/privacy" element={<PrivacyPage />} />
         <Route path="/" element={<HomePage />} />
-        <Route path="/products" element={<HomePage />} /> {/* Initially redirect generic products to home or a catalog page - using Home for now */}
+
+        {/* Products */}
+        <Route path="/products" element={<HomePage />} />
         <Route path="/products/:subcategoryId" element={<ProductListing />} />
         <Route path="/cart" element={<CartPage />} />
-        <Route path="/applications" element={<div className="container mt-5 pt-5 text-center" style={{ minHeight: '50vh' }}><h2 className="mt-5">Applications Page Coming Soon</h2><p>This section is under development.</p></div>} />
-        <Route path="/about" element={<h2 className="text-center mt-5">About Us Coming Soon</h2>} />
-        <Route path="/contact" element={<h2 className="text-center mt-5">Contact Us Coming Soon</h2>} />
-        <Route path="*" element={<h2 className="text-center mt-5">404 Not Found</h2>} />
 
+        {/* New Pages */}
+        <Route path="/applications" element={<ApplicationsPage />} />
+        <Route path="/resources" element={<ResourcesPage />} />
         <Route path='/about' element={<AboutPage />} />
+
+        {/* Existing Routes */}
         <Route path='/facilitator' element={<FacilitatorCard />} />
         <Route path='/facilitator-detail/:slug' element={<FacilitatorDetailPage />} />
-        <Route path='/facilitator' element={<FacilitatorCard />} />
+
         <Route path='/team' element={<ProfileGrid />} />
         <Route path='/training/:id' element={<TrainingPage />} />
         {/* <Route path='/podcast' element={<PodcastPage />} /> */}
         <Route path='/training-detail/:courseId' element={<TrainingDetailPage />} />
         <Route path='/team-details/:slug' element={<TeamDetailPage />} />
-        <Route exact path='/contact' element={<ContactPage />} />
+
         <Route path='/verify/:token' element={<EmailVerify />} />
 
         <Route exact path='/invoice' element={<CourseInvoice />} />
@@ -87,11 +92,6 @@ function App() {
 
         <Route exact path='/calendarone' element={<CourseCalendar />} />
 
-        {/* <Route exact path='/podcast' element={<ContactPage />} />
-           */}
-
-
-        {/* <Route path='/training' element={<ProtectedRoute element={<TrainingPage />} />} /> */}
         <Route path='/cart' element={<ProtectedRoute element={<CartPage />} />} />
         <Route exact path="/myaccount" element={<ProtectedRoute element={<MyAccountPage />} />} />
         <Route exact path="/checkout" element={<ProtectedRoute element={<CheckoutPage />} />} />

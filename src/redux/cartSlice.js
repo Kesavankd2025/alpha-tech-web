@@ -21,7 +21,7 @@ const cartSlice = createSlice({
                     name: newItem.name,
                     partNo: newItem.partNo,
                     quantity: newItem.quantity,
-                    // Add other relevant fields if needed
+                    image: newItem.image
                 });
             }
             state.totalQuantity += newItem.quantity;
@@ -37,9 +37,20 @@ const cartSlice = createSlice({
         clearCart(state) {
             state.items = [];
             state.totalQuantity = 0;
+        },
+        updateQuantity(state, action) {
+            const { id, quantity } = action.payload;
+            const existingItem = state.items.find(item => item.id === id);
+
+            if (existingItem && quantity > 0) {
+                // Calculate difference to update totalQuantity
+                const diff = quantity - existingItem.quantity;
+                existingItem.quantity = quantity;
+                state.totalQuantity += diff;
+            }
         }
     }
 });
 
-export const { addToCart, removeFromCart, clearCart } = cartSlice.actions;
+export const { addToCart, removeFromCart, clearCart, updateQuantity } = cartSlice.actions;
 export default cartSlice.reducer;

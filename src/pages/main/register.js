@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
-import { Formik, Form, Field } from 'formik';
+import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 import './myaccount.css';
 import apiProvider from '../../apiProvider/api';
 import { ToastContainer, toast } from 'react-toastify';
 import { Helmet } from 'react-helmet-async';
-import { Country, State, City } from 'country-state-city';
+import { Country } from 'country-state-city';
 import { useTranslation } from "../../context/TranslationContext";
 
 const SignupSchema = Yup.object().shape({
@@ -20,26 +20,25 @@ const SignupSchema = Yup.object().shape({
         .matches(/[A-Z]/, "Must contain at least one uppercase letter")
         .matches(/[a-z]/, "Must contain at least one lowercase letter")
         .matches(/[0-9]/, "Must contain at least one number")
-        .matches(/[@$!%*?&]/, "Must contain at least one special character (@$!%*?&)")
+        .matches(/[@$!%*?&]/, "Must contain at least one special character")
         .required("Password is required"),
     confirmPassword: Yup.string()
         .oneOf([Yup.ref('password'), null], 'Passwords must match')
         .required('Confirm Password is required'),
-    // ✅ FIX HERE
     acceptTerms: Yup.boolean()
         .oneOf([true], 'You must accept the terms and conditions')
         .required('You must accept the terms and conditions'),
 });
 
 const RegisterPage = () => {
-
     const navigate = useNavigate();
     const [countries, setCountries] = useState([]);
-    const { translateSync, currentLanguage, setCurrentLanguage } = useTranslation();
+    const { translateSync } = useTranslation();
 
     useEffect(() => {
         const allCountries = Country.getAllCountries();
         setCountries(allCountries);
+        window.scrollTo(0, 0);
     }, []);
 
     const formSubmit = async (value) => {
@@ -53,246 +52,215 @@ const RegisterPage = () => {
                 password: value.password,
                 confirmPassword: value.confirmPassword
             }
-            console.log(input, "input");
             const result = await apiProvider.register(input)
-            console.log(result, "result");
-            if (result && result.response && result.status == 200) {
-                navigate("/login")
-            }
-            if (result.response.response.data.message) {
-                let toastMsg = result.response.response.data.message
-                console.log(toastMsg, "toastMsg");
-                toast(toastMsg)
+
+            if (result && result.response && result.status === 200) {
+                toast.success("Registration successful! Please login.");
+                setTimeout(() => navigate("/login"), 1500);
             }
 
-        } catch (error) { }
+            if (result?.response?.response?.data?.message) {
+                toast.error(result.response.response.data.message);
+            }
+
+        } catch (error) {
+            toast.error("An error occurred during registration.");
+        }
     }
-    useEffect(() => {
-        window.scrollTo(0, 0)
-    }, [])
 
     return (
-        <>
+        <div style={{ paddingTop: '80px', minHeight: '100vh', backgroundColor: '#f8f9fa' }} className="d-flex align-items-center py-5">
             <Helmet>
-                <title>Facilities management courses in uae | iLap</title>
-                <meta
-                    name="keywords"
-                    content="management training dubai, course uae, certified commercial contracts manager, event planning courses in dubai, uae consultant, communication skills course, facilities management courses"
-                />
+                <title>Register | Alpha Technical Rubber Products</title>
+                <meta name="description" content="Create an account to order industrial seals and view technical documents." />
             </Helmet>
 
-            <div>
-                <section className="Home-banner-3  text-white py-5 position-relative">
-                    <div className="container d-flex flex-column flex-md-row align-items-center">
-                        <div className="col-md-12 text-center  home-header" >
-                            <div className="innerbanner-txt ">
-                                <h1 className="fw-bold text-center display-5  font-51">{translateSync('Register')}</h1>
+            <div className="container">
+                <div className="row justify-content-center">
+                    <div className="col-lg-10 shadow-lg rounded bg-white overflow-hidden">
+                        <div className="row">
+                            {/* Left Side - Image */}
+                            <div className="col-md-5 p-0 d-none d-md-block bg-dark position-relative">
+                                <img
+                                    src="/img/register-banner.jpg"
+                                    onError={(e) => e.target.src = '/img/banner-new-1.png'}
+                                    alt="Register Banner"
+                                    className="w-100 h-100 object-fit-cover opacity-75"
+                                />
+                                <div className="position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center text-white p-4 text-center" style={{ background: 'rgba(0,0,0,0.5)' }}>
+                                    <h2 className="fw-bold mb-3">Join Alpha Tech</h2>
+                                    <p className="lead fs-6">Create an account to streamline your ordering process and access exclusive technical resources.</p>
+                                </div>
+                            </div>
+
+                            {/* Right Side - Form */}
+                            <div className="col-md-7 p-5">
+                                <h3 className="fw-bold text-center mb-4 text-primary">Create Account</h3>
+
+                                <Formik
+                                    initialValues={{
+                                        userName: '',
+                                        email: '',
+                                        mobileNumber: '',
+                                        country: '',
+                                        preferredLanguage: '',
+                                        password: '',
+                                        confirmPassword: '',
+                                        acceptTerms: false
+                                    }}
+                                    validationSchema={SignupSchema}
+                                    onSubmit={formSubmit}
+                                >
+                                    {({ errors, touched, handleChange, handleBlur, values }) => (
+                                        <Form>
+                                            <div className="row g-3">
+                                                <div className="col-md-6 text-start">
+                                                    <label className="form-label small fw-bold">Username</label>
+                                                    <input
+                                                        className={`form-control ${errors.userName && touched.userName ? 'is-invalid' : ''}`}
+                                                        name="userName"
+                                                        onChange={handleChange}
+                                                        onBlur={handleBlur}
+                                                        type="text"
+                                                        placeholder="johndoe"
+                                                    />
+                                                    {errors.userName && touched.userName && <div className="invalid-feedback">{errors.userName}</div>}
+                                                </div>
+
+                                                <div className="col-md-6 text-start">
+                                                    <label className="form-label small fw-bold">Email</label>
+                                                    <input
+                                                        className={`form-control ${errors.email && touched.email ? 'is-invalid' : ''}`}
+                                                        name="email"
+                                                        onChange={handleChange}
+                                                        onBlur={handleBlur}
+                                                        type="email"
+                                                        placeholder="john@example.com"
+                                                    />
+                                                    {errors.email && touched.email && <div className="invalid-feedback">{errors.email}</div>}
+                                                </div>
+
+                                                <div className="col-md-6 text-start">
+                                                    <label className="form-label small fw-bold">Mobile Number</label>
+                                                    <input
+                                                        className={`form-control ${errors.mobileNumber && touched.mobileNumber ? 'is-invalid' : ''}`}
+                                                        name="mobileNumber"
+                                                        onChange={handleChange}
+                                                        onBlur={handleBlur}
+                                                        type="text"
+                                                        placeholder="+973 ..."
+                                                    />
+                                                    {errors.mobileNumber && touched.mobileNumber && <div className="invalid-feedback">{errors.mobileNumber}</div>}
+                                                </div>
+
+                                                <div className="col-md-6 text-start">
+                                                    <label className="form-label small fw-bold">Country</label>
+                                                    <select
+                                                        className={`form-select ${errors.country && touched.country ? 'is-invalid' : ''}`}
+                                                        name="country"
+                                                        onChange={handleChange}
+                                                        onBlur={handleBlur}
+                                                    >
+                                                        <option value="">Select Country *</option>
+                                                        {countries.map((country) => (
+                                                            <option key={country.isoCode} value={country.name}>
+                                                                {country.name}
+                                                            </option>
+                                                        ))}
+                                                    </select>
+                                                    {errors.country && touched.country && <div className="invalid-feedback">{errors.country}</div>}
+                                                </div>
+
+                                                <div className="col-12 text-start">
+                                                    <label className="form-label small fw-bold">Preferred Language</label>
+                                                    <select
+                                                        className={`form-select ${errors.preferredLanguage && touched.preferredLanguage ? 'is-invalid' : ''}`}
+                                                        name="preferredLanguage"
+                                                        onChange={handleChange}
+                                                        onBlur={handleBlur}
+                                                    >
+                                                        <option value="">Select Language *</option>
+                                                        <option value="English">English</option>
+                                                        <option value="Arabic">Arabic</option>
+                                                    </select>
+                                                    {errors.preferredLanguage && touched.preferredLanguage && <div className="invalid-feedback">{errors.preferredLanguage}</div>}
+                                                </div>
+
+                                                <div className="col-md-6 text-start">
+                                                    <label className="form-label small fw-bold">Password</label>
+                                                    <input
+                                                        className={`form-control ${errors.password && touched.password ? 'is-invalid' : ''}`}
+                                                        name="password"
+                                                        onChange={handleChange}
+                                                        onBlur={handleBlur}
+                                                        type="password"
+                                                        placeholder="********"
+                                                    />
+                                                    {errors.password && touched.password && <div className="invalid-feedback">{errors.password}</div>}
+                                                </div>
+
+                                                <div className="col-md-6 text-start">
+                                                    <label className="form-label small fw-bold">Confirm Password</label>
+                                                    <input
+                                                        className={`form-control ${errors.confirmPassword && touched.confirmPassword ? 'is-invalid' : ''}`}
+                                                        name="confirmPassword"
+                                                        onChange={handleChange}
+                                                        onBlur={handleBlur}
+                                                        type="password"
+                                                        placeholder="********"
+                                                    />
+                                                    {errors.confirmPassword && touched.confirmPassword && <div className="invalid-feedback">{errors.confirmPassword}</div>}
+                                                </div>
+
+                                                <div className="col-12 mt-4 text-start">
+                                                    <div className="form-check">
+                                                        <input
+                                                            type="checkbox"
+                                                            className="form-check-input"
+                                                            id="acceptTerms"
+                                                            name="acceptTerms"
+                                                            checked={values.acceptTerms}
+                                                            onChange={handleChange}
+                                                        />
+                                                        <label className="form-check-label small" htmlFor="acceptTerms">
+                                                            {translateSync('I accept the terms')} &nbsp;
+                                                            <span className="text-primary fw-bold" style={{ cursor: 'pointer' }} onClick={() => navigate('/terms')}>Terms</span>
+                                                            &nbsp;&&nbsp;
+                                                            <span className="text-primary fw-bold" style={{ cursor: 'pointer' }} onClick={() => navigate('/privacy')}>Privacy Policy</span>
+                                                        </label>
+                                                    </div>
+                                                    {errors.acceptTerms && touched.acceptTerms && <div className="text-danger small mt-1">{errors.acceptTerms}</div>}
+                                                </div>
+
+                                                <div className="col-12 mt-4">
+                                                    <button
+                                                        type="submit"
+                                                        className="btn btn-primary w-100 fw-bold py-2"
+                                                        style={{ backgroundColor: 'var(--accent-color)', borderColor: 'var(--accent-color)' }}
+                                                        disabled={!values.acceptTerms}
+                                                    >
+                                                        {translateSync('Register')}
+                                                    </button>
+                                                </div>
+
+                                                <div className="col-12 text-center mt-3">
+                                                    <span className="text-muted small">{translateSync('Already have an account?')} </span>
+                                                    <button type="button" className="btn btn-link p-0 text-decoration-none fw-bold small" style={{ color: 'var(--primary-color)' }} onClick={() => navigate("/login")}>
+                                                        {translateSync('Login')}
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </Form>
+                                    )}
+                                </Formik>
                             </div>
                         </div>
                     </div>
-                </section>
-
-                <section className="py-5">
-                    <div class="rbt-elements-area bg-color-white rbt-section-gap">
-                        <Formik
-                            initialValues={{
-                                userName: '',
-                                email: '',
-                                mobileNumber: '',
-                                country: '',
-                                preferredLanguage: '',
-                                password: '',
-                                confirmPassword: '',
-                                acceptTerms: false
-                            }}
-                            validationSchema={SignupSchema}
-                            onSubmit={values => {
-                                formSubmit(values)
-                            }}
-                        >
-                            {({ errors, touched, handleChange, handleBlur, values }) => (
-                                <Form>
-                                    <div class="container">
-                                        <div class="row gy-5 row--30">
-                                            <div class="col-lg-6">
-                                                <div className="signupimg">
-                                                    <img src='/img/contact-img.jpg'></img>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <div class="rbt-contact-form contact-form-style-1 max-width-auto">
-                                                    <h3 class="title text-center">{translateSync('Register')}</h3>
-
-                                                    <div class="">
-                                                        <input
-                                                            className='form-control'
-                                                            name="userName"
-                                                            onChange={handleChange}
-                                                            onBlur={handleBlur}
-                                                            placeholder={translateSync('Username ')}
-                                                            type="text"
-                                                        />
-                                                        {errors.userName && touched.userName && <div className="error_msg">{errors.userName}</div>}
-                                                        <br></br>
-                                                    </div>
-                                                    <div class="">
-                                                        <input
-                                                            className='form-control'
-                                                            name="email"
-                                                            onChange={handleChange}
-                                                            onBlur={handleBlur}
-                                                            placeholder={translateSync('Email address ')}
-                                                            type="text"
-                                                        />
-                                                        {errors.email && touched.email && <div className="error_msg">{errors.email}</div>}
-                                                        <br></br>
-                                                    </div>
-                                                    <div class="">
-                                                        <input
-                                                            className='form-control'
-                                                            name="mobileNumber"
-                                                            onChange={handleChange}
-                                                            onBlur={handleBlur}
-                                                            placeholder={translateSync('Mobile Number')}
-                                                            type="text"
-                                                        />
-                                                        {errors.mobileNumber && touched.mobileNumber && <div className="error_msg">{errors.mobileNumber}</div>}
-                                                        <br></br>
-                                                    </div>
-
-                                                    <div class="">
-                                                        <select
-                                                            className='form-control'
-                                                            name="country"
-                                                            onChange={handleChange}
-                                                            onBlur={handleBlur}
-                                                            placeholder={translateSync('Select Country')}
-                                                        >
-                                                            <option value="">{translateSync('Select Country')} *</option>
-                                                            {countries.map((country) => (
-                                                                <option key={country.isoCode} value={country.name}>
-                                                                    {translateSync(country.name)}
-                                                                </option>
-                                                            ))}
-                                                        </select>
-                                                        {errors.country && touched.country && <div className="error_msg">{errors.country}</div>}
-                                                        <br></br>
-                                                    </div>
-
-                                                    <div class="">
-                                                        <select
-                                                            className='form-control'
-                                                            name="preferredLanguage"
-                                                            onChange={handleChange}
-                                                            onBlur={handleBlur}
-                                                            placeholder={translateSync('Select Preferred Language')}
-                                                        >
-                                                            <option value="">{translateSync('Select Preferred Language')} *</option>
-                                                            <option value="English">English</option>
-                                                            <option value="Arabic">Arabic</option>
-                                                        </select>
-                                                        {errors.preferredLanguage && touched.preferredLanguage && <div className="error_msg">{errors.preferredLanguage}</div>}
-                                                        <br></br>
-                                                    </div>
-
-                                                    <div class="">
-                                                        <input
-                                                            className='form-control'
-                                                            name="password"
-                                                            onChange={handleChange}
-                                                            onBlur={handleBlur}
-                                                            placeholder={translateSync("Password *")}
-                                                            type="password"
-                                                        />
-                                                        {errors.password && touched.password && <div className="error_msg">{errors.password}</div>}
-                                                        <br></br>
-                                                    </div>
-
-                                                    <div class="">
-                                                        <input
-                                                            className='form-control'
-                                                            name="confirmPassword"
-                                                            onChange={handleChange}
-                                                            onBlur={handleBlur}
-                                                            placeholder={translateSync('Confirm Password')}
-                                                            type="password"
-                                                        />
-                                                        {errors.confirmPassword && touched.confirmPassword && <div className="error_msg">{errors.confirmPassword}</div>}
-                                                        <br></br>
-                                                    </div>
-
-                                                    <div className="form-group">
-                                                        <div className="d-flex align-items-center">
-                                                            <input
-                                                                type="checkbox"
-                                                                id="acceptTerms"
-                                                                name="acceptTerms"
-                                                                checked={values.acceptTerms}
-                                                                onChange={handleChange}
-                                                                className="mr-2"
-                                                            />
-                                                            <label htmlFor="acceptTerms" className="mb-0 ml-2">
-                                                                <span className="regnavicon">{translateSync('I accept the terms')}</span>
-                                                            </label>
-                                                        </div>
-
-                                                        <div className="ml-4 mt-2">
-                                                            <span>
-                                                                {translateSync('By creating an account, you agree to the')}{' '}
-                                                                <span
-                                                                    className="regnavicon"
-                                                                    style={{ cursor: 'pointer', textDecoration: 'underline' }}
-                                                                    onClick={() => navigate('/terms')}
-                                                                >
-                                                                    {translateSync('Terms of Service')}
-                                                                </span>{' '}
-                                                                {translateSync('and')}{' '}
-                                                                <span
-                                                                    className="regnavicon"
-                                                                    style={{ cursor: 'pointer', textDecoration: 'underline' }}
-                                                                    onClick={() => navigate('/privacy')}
-                                                                >
-                                                                    {translateSync('Privacy Policy')}
-                                                                </span>.
-                                                            </span>
-                                                        </div>
-
-                                                        {errors.acceptTerms && touched.acceptTerms && (
-                                                            <div className="error_msg">{errors.acceptTerms}</div>
-                                                        )}
-                                                    </div>
-
-
-                                                    <div class="form-submit-group">
-                                                        <button
-                                                            type="submit"
-                                                            className="rbt-btn btn-md btn-gradient hover-icon-reverse w-100"
-                                                            disabled={!values.acceptTerms}
-                                                        >
-
-                                                            <span class="icon-reverse-wrapper">
-                                                                <span class="btn-text">{translateSync('Register')}</span>
-                                                                <span class="btn-icon"><i class="feather-arrow-right"></i></span>
-                                                                <span class="btn-icon"><i class="feather-arrow-right"></i></span>
-                                                            </span>
-                                                        </button>
-                                                    </div>
-
-                                                    <br></br>
-                                                    <p className='text-center' >{translateSync('Already have an account?')} <span className='regnavicon' onClick={() => navigate("/login")}> {translateSync('Login')}.</span></p>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-4"></div>
-                                        </div>
-                                    </div>
-                                </Form>
-                            )}
-                        </Formik>
-                    </div>
-                </section>
+                </div>
             </div>
-        </>
-    )
-}
+            <ToastContainer />
+        </div>
+    );
+};
 
 export default RegisterPage;

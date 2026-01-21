@@ -16,6 +16,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import { HelmetProvider } from 'react-helmet-async';
 import { TranslationProvider } from './context/TranslationContext'; // Import the provider
+import './industrial-theme.css';
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

@@ -51,13 +51,13 @@ const HomePage = () => {
                 >
                     <SwiperSlide>
                         <div className="hero-slide-item" style={{ width: '100%', height: '750px', position: 'relative' }}>
-                            <img src="/img/banner-new-1.png" alt="Industrial Manufacturing" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                            <img src="/img/home-slider-1.png" alt="High-Performance Seals" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                             <div className="hero-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center" style={{ background: 'linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.3))' }}>
                                 <div className="container text-center text-white">
                                     <div className="row justify-content-center">
                                         <div className="col-lg-10" data-aos="fade-up">
-                                            <h1 className="hero-title display-3 fw-bold mb-4 text-white">World-Class Industrial Solutions</h1>
-                                            <p className="hero-subtitle lead mb-5 mx-auto" style={{ maxWidth: '800px' }}>Precision Engineering & Safety Solutions for Global Heavy Industries.</p>
+                                            <h1 className="hero-title display-3 fw-bold mb-4 text-white">High-Performance Sealing Solutions</h1>
+                                            <p className="hero-subtitle fs-5 fw-normal mb-5 mx-auto" style={{ maxWidth: '800px' }}>Precision engineered rubber seals for demanding industrial applications.</p>
                                             <button className="btn btn-hero btn-lg px-5 py-3" onClick={() => navigate('/products')}>Explore Products</button>
                                         </div>
                                     </div>
@@ -67,14 +67,14 @@ const HomePage = () => {
                     </SwiperSlide>
                     <SwiperSlide>
                         <div className="hero-slide-item" style={{ width: '100%', height: '750px', position: 'relative' }}>
-                            <img src="/img/banner-new-2.png" alt="Precision Components" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                            <img src="/img/home-slider-2.png" alt="Precision Components" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                             <div className="hero-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center" style={{ background: 'linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.3))' }}>
                                 <div className="container text-center text-white">
                                     <div className="row justify-content-center">
                                         <div className="col-lg-10">
-                                            <h1 className="hero-title display-3 fw-bold mb-4 text-white">Uncompromising Quality Standard</h1>
-                                            <p className="hero-subtitle lead mb-5 mx-auto" style={{ maxWidth: '800px' }}>ISO 9001:2015 & AEO Certified Manufacturing Excellence.</p>
-                                            <button className="btn btn-hero btn-lg px-5 py-3" onClick={() => navigate('/contact')}>Partner With Us</button>
+                                            <h1 className="hero-title display-3 fw-bold mb-4 text-white">Precision Engineered Components</h1>
+                                            <p className="hero-subtitle fs-5 fw-normal mb-5 mx-auto" style={{ maxWidth: '800px' }}>Advanced retaining rings and seals for critical machinery.</p>
+                                            <button className="btn btn-hero btn-lg px-5 py-3" onClick={() => navigate('/contact')}>Get a Quote</button>
                                         </div>
                                     </div>
                                 </div>
@@ -83,13 +83,13 @@ const HomePage = () => {
                     </SwiperSlide>
                     <SwiperSlide>
                         <div className="hero-slide-item" style={{ width: '100%', height: '750px', position: 'relative' }}>
-                            <img src="/img/banner-new-3.png" alt="Technical Excellence" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                            <img src="/img/home-slider-3.png" alt="Innovation" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                             <div className="hero-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center" style={{ background: 'linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.3))' }}>
                                 <div className="container text-center text-white">
                                     <div className="row justify-content-center">
                                         <div className="col-lg-10">
-                                            <h1 className="hero-title display-3 fw-bold mb-4 text-white">Precision Custom Molding</h1>
-                                            <p className="hero-subtitle lead mb-5 mx-auto" style={{ maxWidth: '800px' }}>Bespoke Rubber & Plastic Solutions Tailored to Your Needs.</p>
+                                            <h1 className="hero-title display-3 fw-bold mb-4 text-white">Next-Generation Industrial Solutions</h1>
+                                            <p className="hero-subtitle fs-5 fw-normal mb-5 mx-auto" style={{ maxWidth: '800px' }}>State-of-the-art materials ensuring durability and efficiency.</p>
                                             <button className="btn btn-hero btn-lg px-5 py-3" onClick={() => navigate('/products')}>View Capabilities</button>
                                         </div>
                                     </div>
@@ -109,7 +109,7 @@ const HomePage = () => {
                         <div style={{ height: '2px', width: '50px', backgroundColor: 'var(--accent-color)', marginLeft: '15px' }}></div>
                     </div>
 
-                    <p className="text-muted mb-5 mx-auto" style={{ maxWidth: '700px' }}>
+                    <p className="text-secondary fs-6 mb-5 mx-auto" style={{ maxWidth: '700px' }}>
                         Committed to international quality standards (ISO 9001:2015) and secure supply chain management (AEO Certified).
                     </p>
 
@@ -121,7 +121,7 @@ const HomePage = () => {
                                     <img src="/img/certificates/cert-2.jpg" alt="ISO 9001:2015" className="img-fluid" style={{ maxHeight: '140px', objectFit: 'contain' }} />
                                 </div>
                                 <h5 className="fw-bold text-dark mb-1">ISO 9001:2015</h5>
-                                <p className="text-muted small mb-0">Quality Management System</p>
+                                <p className="text-secondary small mb-0">Quality Management System</p>
                             </div>
                         </div>
 
@@ -132,7 +132,7 @@ const HomePage = () => {
                                     <img src="/img/certificates/cert-1.jpg" alt="AEO Certified" className="img-fluid" style={{ maxHeight: '140px', objectFit: 'contain' }} />
                                 </div>
                                 <h5 className="fw-bold text-dark mb-1">AEO Certified</h5>
-                                <p className="text-muted small mb-0">Authorised Economic Operator</p>
+                                <p className="text-secondary small mb-0">Authorised Economic Operator</p>
                             </div>
                         </div>
                     </div>
@@ -141,62 +141,47 @@ const HomePage = () => {
 
             {/* 3. Alpha Group Divisions (Dark BG) */}
             <section className="py-5 division-section-bg">
-                <div className="container" style={{ maxWidth: '1100px' }}>
-                    <div className="position-relative mb-5 text-center">
-                        <span className="bg-white px-4 py-2 rounded shadow-sm fw-bold border border-2 border-primary text-uppercase" style={{ color: 'var(--primary-color)', letterSpacing: '1px' }}>
-                            Alpha Group Divisions
-                        </span>
+                <div className="container" >
+                    <div className="text-center mb-5">
+                        <h2 className="text-white">Key Products</h2>
                     </div>
 
                     <div className="row g-4 justify-content-center">
-                        {/* Division 1: Alpha Seals */}
-                        <div className="col-lg-6 col-md-12">
-                            <div className="division-card">
+                        {/* Division 1: O-Rings & Seals */}
+                        <div className="col-lg-4 col-md-6">
+                            <div className="division-card h-100">
                                 <div className="division-image-wrapper">
-                                    <img src="/img/divisions/div-1.jpg" alt="Alpha Seals" />
+                                    <img src="/img/product-category-1.png" alt="O-Rings & Seals" style={{ objectFit: 'cover' }} />
                                 </div>
                                 <div className="division-content">
-                                    <h4>ALPHA <span>SEALS</span></h4>
-                                    <small>Sealing Solutions</small>
+                                    <h4>O-RINGS & <span>SEALS</span></h4>
+                                    <small>Hydraulic & Pneumatic Solutions</small>
                                 </div>
                             </div>
                         </div>
 
-                        {/* Division 2: Alpha Belts */}
-                        <div className="col-lg-6 col-md-12">
-                            <div className="division-card">
+                        {/* Division 2: BPS Items */}
+                        <div className="col-lg-4 col-md-6">
+                            <div className="division-card h-100">
                                 <div className="division-image-wrapper">
-                                    <img src="/img/divisions/div-2.jpg" alt="Alpha Belts" />
+                                    <img src="/img/bps-wheel-stopper.png" alt="BPS Items" style={{ objectFit: 'cover' }} />
                                 </div>
                                 <div className="division-content">
-                                    <h4>ALPHA <span>BELTS</span></h4>
-                                    <small>Industrial V-Belts</small>
+                                    <h4>BPS <span>ITEMS</span></h4>
+                                    <small>Safety & Protection Systems</small>
                                 </div>
                             </div>
                         </div>
 
-                        {/* Division 3: Rubber Products */}
-                        <div className="col-lg-6 col-md-12">
-                            <div className="division-card">
+                        {/* Division 3: Rubber Sheets */}
+                        <div className="col-lg-4 col-md-6">
+                            <div className="division-card h-100">
                                 <div className="division-image-wrapper">
-                                    <img src="/img/divisions/rubber-products.jpg" alt="Rubber Products" />
+                                    <img src="/img/product-rubber-sheets.png" alt="Rubber Sheets" style={{ objectFit: 'cover' }} />
                                 </div>
                                 <div className="division-content">
-                                    <h4>RUBBER <span>PRODUCTS</span></h4>
-                                    <small>Custom Molded Parts</small>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Division 4: Heavy Engineering */}
-                        <div className="col-lg-6 col-md-12">
-                            <div className="division-card">
-                                <div className="division-image-wrapper">
-                                    <img src="/img/divisions/heavy-engineering.jpg" alt="Heavy Engineering" />
-                                </div>
-                                <div className="division-content">
-                                    <h4>HEAVY <span>ENGINEERING</span></h4>
-                                    <small>Industrial Fabrication</small>
+                                    <h4>RUBBER <span>SHEETS</span></h4>
+                                    <small>Industrial Rubber Matting</small>
                                 </div>
                             </div>
                         </div>
@@ -242,7 +227,7 @@ const HomePage = () => {
                                         <i className={`bi ${feat.icon}`}></i>
                                     </div>
                                     <h5 className="fw-bold">{feat.title}</h5>
-                                    <p className="text-muted small">Commitment to excellence in every order.</p>
+                                    <p className="text-secondary small">Commitment to excellence in every order.</p>
                                 </div>
                             </div>
                         ))}
@@ -252,38 +237,30 @@ const HomePage = () => {
 
             {/* 3. Featured Products (Static Data) */}
             <section className="py-5 bg-industrial-light technical-support-cta">
-                <div className="container" style={{ maxWidth: '1240px' }}>
+                <div className="container-fluid px-5">
                     <div className="text-center mb-5" data-aos="fade-up">
-                        <h2>Featured Products</h2>
+                        <h2>Products</h2>
                     </div>
-                    <div className="row g-4">
-                        {featuredProductData.map((prod, index) => (
-                            <div className="col-md-3 col-sm-6" key={prod.id} data-aos="zoom-in" data-aos-delay={index * 100}>
-                                <div className="product-card h-100 d-flex flex-column bg-white rounded overflow-hidden shadow-sm hover-lift">
+                    <div className="row g-3 justify-content-center">
+                        {featuredProductData.slice(0, 6).map((prod, index) => (
+                            <div className="col-lg-2 col-md-4 col-6" key={prod.id} data-aos="zoom-in" data-aos-delay={index * 100}>
+                                <div className="product-card h-100 bg-white border-0 shadow-sm text-center hover-lift overflow-hidden"
+                                    onClick={() => navigate('/products')}
+                                    style={{ cursor: 'pointer', transition: 'transform 0.3s ease' }}>
+
                                     {/* Image Section */}
-                                    <div className="p-4 d-flex align-items-center justify-content-center border-bottom bg-white" style={{ height: '240px' }}>
+                                    <div className="bg-white d-flex align-items-center justify-content-center mb-2 position-relative overflow-hidden" style={{ height: '180px' }}>
                                         <img
                                             src={prod.image}
                                             alt={prod.name}
-                                            className="img-fluid transition-transform"
-                                            style={{ maxHeight: '100%', objectFit: 'contain' }}
+                                            className="img-fluid"
+                                            style={{ maxHeight: '140px', maxWidth: '90%', objectFit: 'contain' }}
                                         />
                                     </div>
 
                                     {/* Content Section */}
-                                    <div className="p-4 d-flex flex-column flex-grow-1 text-start relative">
-                                        <h5 className="fw-bold mb-2 text-dark product-title" style={{ fontSize: '1.1rem' }}>{prod.name}</h5>
-
-                                        {/* Accent Line */}
-                                        <div className="mb-3 rounded" style={{ width: '40px', height: '3px', backgroundColor: 'var(--accent-color)' }}></div>
-
-                                        <p className="text-muted small mb-4 flex-grow-1 product-desc" style={{ lineHeight: '1.6', fontSize: '0.9rem' }}>
-                                            {prod.description}
-                                        </p>
-
-                                        <button className="btn btn-link text-decoration-none fw-bold p-0 text-start align-self-start product-btn" style={{ color: 'var(--accent-color)', fontSize: '0.9rem' }}>
-                                            View Details <i className="bi bi-arrow-right ms-1"></i>
-                                        </button>
+                                    <div className="px-3 pb-4">
+                                        <h5 className="fw-bold text-dark mb-0">{prod.name}</h5>
                                     </div>
                                 </div>
                             </div>
@@ -311,10 +288,10 @@ const HomePage = () => {
                                     <span className="text-uppercase fw-bold letter-spacing-2" style={{ color: 'var(--accent-color)', fontSize: '0.85rem' }}>Since 2005</span>
                                 </div>
                                 <h3 className="text-white mb-4 display-5 fw-bold">Precision. Quality. Speed.</h3>
-                                <p className="lead mb-4 text-white-50" style={{ lineHeight: '1.8' }}>
+                                <p className="mb-4 text-white-50" style={{ lineHeight: '1.8', fontSize: '1.05rem' }}>
                                     Your trusted partner for high-performance sealing solutions. We combine decades of expertise with cutting-edge manufacturing.
                                 </p>
-                                <p className="mb-4 text-white-50" style={{ lineHeight: '1.7' }}>
+                                <p className="mb-4 text-white-50" style={{ lineHeight: '1.8', fontSize: '1.05rem' }}>
                                     ALPHA Technical Rubber Products has been a specialist in the field of hydraulic, pneumatic and rotary seals for over two decades. We design and manufacture custom molded parts for heavy industries across the globe.
                                 </p>
 
@@ -375,7 +352,7 @@ const HomePage = () => {
                     <div className="row justify-content-center text-center">
                         <div className="col-lg-8">
                             <h2 className="text-white mb-4">Need help selecting the right product or size?</h2>
-                            <p className="lead text-white-50 mb-4">Our engineering team is ready to assist you with technical specifications and custom requirements.</p>
+                            <p className="fs-5 text-white mb-4">Our engineering team is ready to assist you with technical specifications and custom requirements.</p>
                             <button className="btn btn-light btn-lg fw-bold" style={{ color: 'var(--primary-color)' }} onClick={() => navigate('/contact')}>
                                 Contact Technical Team
                             </button>

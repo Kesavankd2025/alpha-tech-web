@@ -90,7 +90,7 @@ h6 {
   transform: translateX(-50%) translateY(10px);
   /* Initial state for animation if needed, but keeping simple hover */
   transform: translateX(-50%);
-  display: block;
+  /* display: block; */
   /* Controlled by parent hover usually, but Bootstrap handles display. We set layout here. */
 }
 
@@ -446,6 +446,7 @@ h2::after {
 .industrial-footer .container {
   position: relative;
   z-index: 2;
+  max-width: 1200px !important;
 }
 
 /* Footer Pattern Overlay (Removed for clean look) */
@@ -456,13 +457,15 @@ h2::after {
 /* Headings */
 .industrial-footer .footer-heading {
   color: var(--primary-color);
-  font-weight: 800;
+  font-weight: 700;
   margin-bottom: 1.5rem;
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   position: relative;
   display: inline-block;
+  border-bottom: 2px solid var(--accent-color);
+  padding-bottom: 10px;
 }
 
 .industrial-footer .footer-heading::after {
@@ -677,4 +680,75 @@ h2::after {
   border: 1px solid #f0f0f0;
   padding: 5px;
   border-radius: 4px;
+}
+
+/* Global Branding Overrides */
+.text-primary {
+  color: var(--primary-color) !important;
+}
+
+.text-accent {
+  color: var(--accent-color) !important;
+}
+
+.btn-primary {
+  background-color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-color) !important;
+  border-color: var(--accent-color) !important;
+}
+
+.btn-outline-primary {
+  color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+  color: #fff !important;
+}
+
+
+/* Toastify Customization for Industrial Theme */
+.Toastify__toast {
+  border-radius: 6px !important;
+  font-family: 'Inter', sans-serif !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+  padding: 16px !important;
+}
+
+.Toastify__toast-theme--light.Toastify__toast--success {
+  background-color: var(--primary-color) !important;
+  color: white !important;
+  border-left: 6px solid var(--accent-color) !important;
+}
+
+.Toastify__toast-theme--light.Toastify__toast--error {
+  background-color: #e53e3e !important;
+  color: white !important;
+  border-left: 6px solid #ffcdcd !important;
+}
+
+.Toastify__progress-bar--success {
+  background: var(--accent-color) !important;
+}
+
+.Toastify__progress-bar--error {
+  background: white !important;
+}
+
+.Toastify__close-button--light {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.Toastify__close-button--light:hover {
+  color: #fff !important;
+}
+
+.Toastify__toast-icon svg {
+  fill: var(--accent-color) !important;
 }

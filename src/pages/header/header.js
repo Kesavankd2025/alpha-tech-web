@@ -108,13 +108,13 @@ const Header = () => {
                         </li>
 
                         <li className="nav-item">
-                            <NavLink className="nav-link" to="/about">{translateSync('About Us')}</NavLink>
-                        </li>
-                        <li className="nav-item">
                             <NavLink className="nav-link" to="/applications">{translateSync('Applications')}</NavLink>
                         </li>
                         <li className="nav-item">
                             <NavLink className="nav-link" to="/resources">{translateSync('Resources')}</NavLink>
+                        </li>
+                        <li className="nav-item">
+                            <NavLink className="nav-link" to="/about">{translateSync('About Us')}</NavLink>
                         </li>
                         <li className="nav-item">
                             <NavLink className="nav-link" to="/contact">{translateSync('Contact Us')}</NavLink>

@@ -1,292 +1,137 @@
 import { useEffect } from "react";
-import { Navigate } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
-
+import { Navigate, useNavigate } from "react-router-dom";
 import { Helmet } from 'react-helmet-async';
-
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useTranslation } from "../../context/TranslationContext";
 
 const AboutPage = () => {
     const navigate = useNavigate();
-    const { translateSync, currentLanguage, setCurrentLanguage } = useTranslation();
+    const { translateSync } = useTranslation();
 
     useEffect(() => {
-        AOS.init({
-            duration: 1000,     // animation duration
-            once: false,        // allow animation every time the element is in view
-            mirror: true        // animate out while scrolling past
-        });
+        window.scrollTo(0, 0);
+        AOS.init({ duration: 1000, once: true });
     }, []);
 
-
-
-    useEffect(() => {
-        window.scrollTo(0, 0)
-    }, [])
-
     return (
-        <>
-
+        <div style={{ paddingTop: '80px' }}>
             <Helmet>
-                <title>Executive Coaching Saudi Arabia | iLap Training</title>
-                <meta
-                    name="keywords"
-                    content="executive coaching Saudi Arabia, training centers Dubai, training courses Abu Dhabi, training courses uae, شركة تدريب بالرياض, corporate training firms, training companies in dubai, human resource consulting, corporate workshops Riyadh"
-                />
-
+                <title>About Us | Alpha Technical Rubber Products</title>
+                <meta name="description" content="Leading manufacturer of high-performance rubber seals and custom molded parts for industrial applications." />
             </Helmet>
-            <div>
 
-                <section className="Home-banner-3  text-white py-5 position-relative">
-                    <div className="container d-flex flex-column flex-md-row align-items-center">
-                        <div className="col-md-12 text-center  home-header" data-aos="fade-up" data-aos-delay="200">
-                            <div className="innerbanner-txt ">
-                                <h1 className="fw-bold text-center display-5  font-51">{translateSync('About Us')}</h1>
-                                <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a>{translateSync('About')}</a></li>
-                                    <li class="breadcrumb-item active">{translateSync('iLap Training')}</li>
-                                </ol>
-                            </div>
+            {/* 1. Hero Banner */}
+            <section className="text-white py-5 position-relative" style={{ background: 'linear-gradient(rgba(26, 34, 56, 0.9), rgba(26, 34, 56, 0.9)), url(/img/banner-1.jpg) center/cover', minHeight: '400px', display: 'flex', alignItems: 'center' }}>
+                <div className="container text-center">
+                    <h1 className="fw-bold display-4 mb-3 text-white" data-aos="fade-up">About Alpha Tech</h1>
+                    <p className="lead mb-0 text-white-50" data-aos="fade-up" data-aos-delay="100">Precision Engineering. Global Standards. Trusted Solutions.</p>
+                </div>
+            </section>
 
-                        </div>
+            {/* 2. Company Profile */}
+            <section className="py-5 bg-white">
+                <div className="container py-4">
+                    <div className="row align-items-center g-5">
+                        <div className="col-lg-6" data-aos="fade-right">
+                            <h5 className="text-primary fw-bold text-uppercase mb-3">Who We Are</h5>
+                            <h2 className="fw-bold mb-4 display-6 text-primary">Excellence in Rubber Manufacturing Since 2005</h2>
+                            <div className="mb-4" style={{ height: '4px', width: '60px', backgroundColor: 'var(--accent-color)' }}></div>
+                            <p className="fs-5 text-dark mb-4 fw-normal">
+                                Alpha Technical Rubber Products is a premier manufacturer specializing in high-performance hydraulic, pneumatic, and rotary seals.
+                            </p>
+                            <p className="text-dark mb-4 lh-lg">
+                                With over two decades of experience, we serve heavy industries across the globe, providing critical sealing solutions that ensure operational efficiency and safety. Our state-of-the-art facility in Bahrain utilizes advanced molding technologies to deliver products that meet strict international standards including ISO 9001:2015.
+                            </p>
 
-                    </div>
-                </section>
-
-
-
-
-                {/* Training That Transforms Section */}
-                <section className="training-transforms-section py-5 ">
-                    <div className="container">
-                        {/* Section Title */}
-                        {/* <h2 className="fw-bold text-center text-bg-light-color">Training That Transform</h2>
-                    <p className="text-center px-md-5 mb-4">
-                        Our programs go beyond traditional learning by combining cutting-edge strategies,
-                        real-world applications, and expert guidance to create lasting impact.
-                    </p> */}
-
-                        <div className="row align-items-stretch">
-                            {/* Left Side - Image (Full Height) */}
-                            <div className="col-md-6 d-flex align-items-stretch left-side-img" data-aos="flip-left"
-                                data-aos-easing="ease-out-cubic"
-                                data-aos-duration="1000">
-                                <img
-                                    src="/img/About Us.jpg"
-                                    alt="Training"
-                                    className="img-fluid  w-100 h-100 object-fit-cover"
-                                />
-                            </div>
-
-                            {/* Right Side - List Items (Full Height) */}
-                            <div className="col-md-6 text-left  justify-content-between">
-
-                                <div className="aboutpage-content newww" >
-                                    <h2 className="fw-bold text-left mb-4 text-bg-light-color" data-aos="fade-up" data-aos-delay="200">{translateSync('iLap Training Academy')} </h2>
-
-                                    <p data-aos="fade-up" data-aos-delay="200">{translateSync('Backed by HAL Training Institute, a trusted name in child skills development, iLap brings the same commitment to quality to professional training.')}</p>
-                                    <p data-aos="fade-up" data-aos-delay="300">{translateSync('For decades, HAL has partnered with libraries, schools and education authorities to nurture young minds. Today, through iLap, we extend that legacy by empowering professionals with the same standard of excellence.')}</p>
-                                    <p data-aos="fade-up" data-aos-delay="400">{translateSync('We combine proven educational expertise with cutting-edge corporate learning. Our expert-led programs, available in classroom, online, and corporate formats are designed to:')}</p>
-                                    <ul data-aos="fade-down" data-aos-delay="500">
-                                        <li>{translateSync('Unlock potential at every career stage')}</li>
-                                        <li>{translateSync('Bridge ambition with achievement through practical, engaging training')}</li>
-                                        <li>{translateSync('Deliver measurable results for individuals and teams')}
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-
-
-
-                        <div className="row align-items-stretch mt-5">
-                            {/* Left Side - Image (Full Height) */}
-                            <div className="col-md-6 ">
-                                <div className="vision-statement">
-                                    <img
-                                        src="/img/glasses.png"
-                                        alt="Training"
-                                        className="img-fluid  iconabt-img"
-                                        data-aos="zoom-in" data-aos-delay="200"
-                                    />
-                                    <h5 data-aos="zoom-in" data-aos-delay="200">{translateSync('Vision Statement')}</h5>
-                                    <p data-aos="fade-up" data-aos-delay="200">{translateSync('Transforming professional growth with innovative, impact-driven learning.')}</p>
-                                </div>
-                            </div>
-
-                            {/* Right Side - List Items (Full Height) */}
-                            <div className="col-md-6 ">
-                                <div className="vision-statement">
-                                    <img
-                                        src="/img/Goall.png"
-                                        alt="Training"
-                                        className="img-fluid  iconabt-img"
-                                        data-aos="zoom-in" data-aos-delay="200"
-                                    />
-                                    <h5 data-aos="zoom-in" data-aos-delay="200">{translateSync('Mission Statement')}</h5>
-                                    <p data-aos="fade-up" data-aos-delay="200">{translateSync('To equip individuals and businesses with actionable skills that drive success in a fast-changing world')}</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                <section className="thisislapp-section ">
-                    <div className="overlayyy">
-                        <div className="container my-5 our-culture ">
-
-                            <div className="parallex-contentt-heading">
-                                <h5 className="pb-20" data-aos="fade-up" data-aos-delay="200">{translateSync('Our Culture')}</h5>
-                                <p className="text-white" data-aos="fade-up" data-aos-delay="300">
-                                    {translateSync("At iLap, culture is our DNA—not just a policy. We believe learning is a continuous journey, built on purpose, professionalism, and heart. True transformation starts with trust, and trust is earned through people who care. Whether you're a new graduate, leader, or partner, we commit to:")}
-                                </p>
-                            </div>
-
-
-
-                            <div className="row mb-4">
-                                <div className="col-md-4 mb-3">
-                                    <div class="client-img-kothari-partt aos-init aos-animate" data-aos="zoom-in" data-aos-delay="300">
-
-
-
-                                        <div class="flip-box">
-                                            <div class="flip-box-inner">
-                                                <div class="flip-box-front">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-file-person" viewBox="0 0 16 16">
-                                                        <path d="M12 1a1 1 0 0 1 1 1v10.755S12 11 8 11s-5 1.755-5 1.755V2a1 1 0 0 1 1-1zM4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z" />
-                                                        <path d="M8 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
-                                                    </svg>
-                                                    <h2>{translateSync('Personal')}</h2>
-                                                </div>
-                                                <div class="flip-box-back">
-                                                    <p>{translateSync('Tailored learning, not one-size-fits-all')}</p>
-                                                </div>
-                                            </div>
+                            <div className="row g-4 mb-4">
+                                <div className="col-md-6">
+                                    <div className="d-flex align-items-center">
+                                        <div className="bg-light rounded-circle p-3 me-3 text-primary">
+                                            <i className="bi bi-globe fs-4"></i>
+                                        </div>
+                                        <div>
+                                            <h6 className="fw-bold mb-0">Global Reach</h6>
+                                            <small className="text-muted">Exporting to 20+ Countries</small>
                                         </div>
                                     </div>
                                 </div>
-                                <div className="col-md-4 mb-3">
-                                    <div class="client-img-kothari-partt aos-init aos-animate" data-aos="zoom-in" data-aos-delay="300">
-
-
-
-                                        <div class="flip-box">
-                                            <div class="flip-box-inner">
-                                                <div class="flip-box-front">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-lightning-fill" viewBox="0 0 16 16">
-                                                        <path d="M5.52.359A.5.5 0 0 1 6 0h4a.5.5 0 0 1 .474.658L8.694 6H12.5a.5.5 0 0 1 .395.807l-7 9a.5.5 0 0 1-.873-.454L6.823 9.5H3.5a.5.5 0 0 1-.48-.641z" />
-                                                    </svg>
-                                                    <h2>{translateSync('Empowering')}</h2>
-                                                </div>
-                                                <div class="flip-box-back">
-                                                    <p>{translateSync('Confidence beyond skills')}</p>
-                                                </div>
-                                            </div>
+                                <div className="col-md-6">
+                                    <div className="d-flex align-items-center">
+                                        <div className="bg-light rounded-circle p-3 me-3 text-primary">
+                                            <i className="bi bi-award fs-4"></i>
                                         </div>
-                                    </div>
-                                </div>
-                                <div className="col-md-4 mb-3">
-                                    <div class="client-img-kothari-partt aos-init aos-animate" data-aos="zoom-in" data-aos-delay="300">
-
-
-
-                                        <div class="flip-box">
-                                            <div class="flip-box-inner">
-                                                <div class="flip-box-front">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-bar-chart-steps" viewBox="0 0 16 16">
-                                                        <path d="M.5 0a.5.5 0 0 1 .5.5v15a.5.5 0 0 1-1 0V.5A.5.5 0 0 1 .5 0M2 1.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-4a.5.5 0 0 1-.5-.5zm2 4a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5zm2 4a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-6a.5.5 0 0 1-.5-.5zm2 4a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5z" />
-                                                    </svg>
-                                                    <h2>{translateSync('Built to Last')}</h2>
-                                                </div>
-                                                <div class="flip-box-back">
-                                                    <p>{translateSync('Growth that endures')}</p>
-                                                </div>
-                                            </div>
+                                        <div>
+                                            <h6 className="fw-bold mb-0">Certified Quality</h6>
+                                            <small className="text-muted">ISO 9001:2015 Accredited</small>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-
-
-
+                            <button className="btn btn-primary px-4 py-2" style={{ backgroundColor: 'var(--accent-color)', border: 'none' }} onClick={() => navigate('/contact')}>
+                                Contact Our Team
+                            </button>
                         </div>
-
-
-                    </div>
-                </section>
-
-                {/* Certifications */}
-
-                <section className="certifications-section mt-0 webview">
-                    <div className="container d-flex align-items-center justify-content-between rounded" >
-                        {/* <div className="col-md-6 text-white text-align-left certificad-left-column">
-                            <h2 className="fw-bold" >Our Certification</h2>
-                            <p >We offer internationally recognized and industry-approved training to ensure high-quality education.</p>
-                        </div>
-
-                        <div
-                            className="col-md-6 d-flex bg-white p-3 rounded justify-content-center align-items-center certificad-right-column"
-                        >
-                            <div className="col-md-5 text-center">
-                                <img src="/img/dubai-img.png" className="img-fluid" alt="Dubai Knowledge" />
-                            </div>
-                            <div className="border-start mx-3" style={{ height: "50px" }}></div>
-                            <div className="col-md-5 text-center">
-                                <img src="/img/crd-certified.png" className="img-fluid" alt="CPD Certified" />
-                            </div>
-                        </div> */}
-                        <div className="container my-5">
-                            <div className="cta-box p-4 d-flex flex-column flex-md-row align-items-center justify-content-between">
-                                <div>
-                                    <p data-aos="fade-right" data-aos-delay="200">{translateSync('This is iLap: Rooted in Integrity, Driven by Excellence & Powered by HAL')}</p>
-
-                                    <h3 className="mb-1 fw-bold" data-aos="fade-right" data-aos-delay="300">{translateSync('Want to experience the iLap difference?')}</h3>
-                                    {/* <p className="mb-0 text-muted">Let’s connect ➔</p> */}
+                        <div className="col-lg-6" data-aos="zoom-in">
+                            <div className="position-relative">
+                                <img src="/img/about-us-side.png" alt="Factory Interior" className="img-fluid rounded shadow-lg" />
+                                <div className="position-absolute bottom-0 start-0 bg-white p-4 m-4 rounded shadow d-none d-md-block" style={{ maxWidth: '250px' }}>
+                                    <h3 className="fw-bold text-primary mb-0">20+</h3>
+                                    <p className="mb-0 text-muted small">Years of Engineering Excellence</p>
                                 </div>
-                                <p data-aos="fade-left" data-aos-delay="200" style={{ cursor: "pointer" }} onClick={() => navigate("/contact")} className="  px-4 py-2 mt-3 mt-md-0 fw-semibold">
-                                    <button class="rbt-btn btn-gradient rbt-switch-btn rbt-switch-y mt-3"><span data-text={translateSync("Let’s Connect")}>{translateSync('Let’s Connect')}➔</span></button>
-
-                                </p>
                             </div>
                         </div>
                     </div>
-                </section>
+                </div>
+            </section>
 
+            {/* 3. Core Values */}
+            <section className="py-5 bg-light">
+                <div className="container py-4">
+                    <div className="text-center mb-5" data-aos="fade-up">
+                        <h2 className="fw-bold text-primary">Our Core Values</h2>
+                        <p className="text-secondary fw-normal">The principles that drive our innovation and success.</p>
+                    </div>
+                    <div className="row g-4">
+                        {[
+                            { title: "Innovation", icon: "bi-lightbulb", desc: "Constantly evolving our manufacturing processes to meet modern industrial challenges." },
+                            { title: "Integrity", icon: "bi-shield-lock", desc: "Building trust through transparent business practices and reliable product performance." },
+                            { title: "Quality", icon: "bi-star", desc: "Uncompromising standards in every seal we produce, backed by rigorous testing." },
+                            { title: "Customer Focus", icon: "bi-people", desc: "Tailoring solutions to meet the specific technical needs of our clients." }
+                        ].map((val, idx) => (
+                            <div className="col-md-6 col-lg-3" key={idx} data-aos="fade-up" data-aos-delay={idx * 100}>
+                                <div className="card h-100 shadow-sm text-center p-4 hover-lift" style={{ border: "1px solid #f6993f" }}>
+                                    <div className="mb-3 text-primary fs-1">
+                                        <i className={`bi ${val.icon}`}></i>
+                                    </div>
+                                    <h5 className="fw-bold mb-3">{val.title}</h5>
+                                    <p className="text-secondary small mb-0">{val.desc}</p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
 
-            </div>
-
-        </>
-    )
-}
+            {/* 4. Certifications CTA */}
+            <section className="py-5 text-white" style={{ backgroundColor: 'var(--primary-color)' }}>
+                <div className="container">
+                    <div className="row align-items-center">
+                        <div className="col-md-8 text-center text-md-start mb-4 mb-md-0">
+                            <h3 className="fw-bold mb-2 text-white">ISO 9001:2015 Certified Manufacturer</h3>
+                            <p className="mb-0 text-white">We adhere to the highest international standards of quality management.</p>
+                        </div>
+                        <div className="col-md-4 text-center text-md-end">
+                            <button className="btn btn-light px-4 py-2 fw-bold text-primary" onClick={() => navigate('/resources')}>
+                                View Certificates
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    );
+};
 
 export default AboutPage;

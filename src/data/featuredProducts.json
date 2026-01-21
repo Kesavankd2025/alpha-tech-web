@@ -30,5 +30,21 @@
         "category": "bps",
         "targetId": "speed-humps",
         "image": "/img/products/speed-hump-featured.jpg"
+    },
+    {
+        "id": "p5",
+        "name": "Hydraulic Seals",
+        "description": "High-performance hydraulic seals for heavy machinery and fluid power systems.",
+        "category": "seals",
+        "targetId": "hydraulic-seals",
+        "image": "/img/product-category-1.png"
+    },
+    {
+        "id": "p6",
+        "name": "Corner Guards",
+        "description": "Impact-absorbing rubber corner guards for wall and pillar protection.",
+        "category": "bps",
+        "targetId": "corner-guards",
+        "image": "/img/bps-corner-guard.png"
     }
 ]
