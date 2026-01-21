@@ -50,42 +50,48 @@ const HomePage = () => {
                     style={{ width: '100%', height: '100%' }}
                 >
                     <SwiperSlide>
-                        <div style={{ width: '100%', height: '500px', position: 'relative' }}>
+                        <div className="hero-slide-item" style={{ width: '100%', height: '750px', position: 'relative' }}>
                             <img src="/img/banner-new-1.png" alt="Industrial Manufacturing" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                            <div className="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style={{ background: 'linear-gradient(90deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.1) 100%)' }}>
-                                <div className="container text-white">
-                                    <div className="col-md-8" data-aos="fade-right">
-                                        <h1 className="display-4 fw-bold mb-4 text-white">Advanced Industrial Solutions</h1>
-                                        <p className="lead mb-4">Precision engineering for heavy industries worldwide.</p>
-                                        <button className="btn btn-primary btn-lg" onClick={() => navigate('/products')} style={{ backgroundColor: 'var(--accent-color)', borderColor: 'var(--accent-color)' }}>Explore Products</button>
+                            <div className="hero-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center" style={{ background: 'linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.3))' }}>
+                                <div className="container text-center text-white">
+                                    <div className="row justify-content-center">
+                                        <div className="col-lg-10" data-aos="fade-up">
+                                            <h1 className="hero-title display-3 fw-bold mb-4 text-white">World-Class Industrial Solutions</h1>
+                                            <p className="hero-subtitle lead mb-5 mx-auto" style={{ maxWidth: '800px' }}>Precision Engineering & Safety Solutions for Global Heavy Industries.</p>
+                                            <button className="btn btn-hero btn-lg px-5 py-3" onClick={() => navigate('/products')}>Explore Products</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <div style={{ width: '100%', height: '500px', position: 'relative' }}>
+                        <div className="hero-slide-item" style={{ width: '100%', height: '750px', position: 'relative' }}>
                             <img src="/img/banner-new-2.png" alt="Precision Components" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                            <div className="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style={{ background: 'linear-gradient(90deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.1) 100%)' }}>
-                                <div className="container text-white">
-                                    <div className="col-md-8">
-                                        <h1 className="display-4 fw-bold mb-4 text-white">Quality You Can Trust</h1>
-                                        <p className="lead mb-4">ISO 9001:2015 Certified Manufacturer.</p>
-                                        <button className="btn btn-outline-light btn-lg" onClick={() => navigate('/contact')} style={{ backgroundColor: 'var(--accent-color)', borderColor: 'var(--accent-color)' }}>Contact Us</button>
+                            <div className="hero-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center" style={{ background: 'linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.3))' }}>
+                                <div className="container text-center text-white">
+                                    <div className="row justify-content-center">
+                                        <div className="col-lg-10">
+                                            <h1 className="hero-title display-3 fw-bold mb-4 text-white">Uncompromising Quality Standard</h1>
+                                            <p className="hero-subtitle lead mb-5 mx-auto" style={{ maxWidth: '800px' }}>ISO 9001:2015 & AEO Certified Manufacturing Excellence.</p>
+                                            <button className="btn btn-hero btn-lg px-5 py-3" onClick={() => navigate('/contact')}>Partner With Us</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <div style={{ width: '100%', height: '500px', position: 'relative' }}>
+                        <div className="hero-slide-item" style={{ width: '100%', height: '750px', position: 'relative' }}>
                             <img src="/img/banner-new-3.png" alt="Technical Excellence" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                            <div className="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style={{ background: 'linear-gradient(90deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.1) 100%)' }}>
-                                <div className="container text-white">
-                                    <div className="col-md-8">
-                                        <h1 className="display-4 fw-bold mb-4 text-white">Custom Molding Services</h1>
-                                        <p className="lead mb-4">Tailored rubber and plastic solutions for your specific needs.</p>
-                                        <button className="btn btn-primary btn-lg" onClick={() => navigate('/products')} style={{ backgroundColor: 'var(--accent-color)', borderColor: 'var(--accent-color)' }}>View Catalog</button>
+                            <div className="hero-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center" style={{ background: 'linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.3))' }}>
+                                <div className="container text-center text-white">
+                                    <div className="row justify-content-center">
+                                        <div className="col-lg-10">
+                                            <h1 className="hero-title display-3 fw-bold mb-4 text-white">Precision Custom Molding</h1>
+                                            <p className="hero-subtitle lead mb-5 mx-auto" style={{ maxWidth: '800px' }}>Bespoke Rubber & Plastic Solutions Tailored to Your Needs.</p>
+                                            <button className="btn btn-hero btn-lg px-5 py-3" onClick={() => navigate('/products')}>View Capabilities</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -253,20 +259,32 @@ const HomePage = () => {
                     <div className="row g-4">
                         {featuredProductData.map((prod, index) => (
                             <div className="col-md-3 col-sm-6" key={prod.id} data-aos="zoom-in" data-aos-delay={index * 100}>
-                                <div className="product-card h-100 d-flex flex-column">
-                                    <div className="bg-white p-3 mb-3 d-flex align-items-center justify-content-center border rounded" style={{ height: '220px' }}>
+                                <div className="product-card h-100 d-flex flex-column bg-white rounded overflow-hidden shadow-sm hover-lift">
+                                    {/* Image Section */}
+                                    <div className="p-4 d-flex align-items-center justify-content-center border-bottom bg-white" style={{ height: '240px' }}>
                                         <img
                                             src={prod.image}
                                             alt={prod.name}
-                                            className="img-fluid"
+                                            className="img-fluid transition-transform"
                                             style={{ maxHeight: '100%', objectFit: 'contain' }}
                                         />
                                     </div>
-                                    <h5 className="fw-bold">{prod.name}</h5>
-                                    <p className="text-muted small mb-3 flex-grow-1">{prod.description}</p>
-                                    <button className="btn btn-link text-center ps-0" style={{ color: 'var(--accent-color)' }}>
-                                        View Details <i className="bi bi-chevron-right small"></i>
-                                    </button>
+
+                                    {/* Content Section */}
+                                    <div className="p-4 d-flex flex-column flex-grow-1 text-start relative">
+                                        <h5 className="fw-bold mb-2 text-dark product-title" style={{ fontSize: '1.1rem' }}>{prod.name}</h5>
+
+                                        {/* Accent Line */}
+                                        <div className="mb-3 rounded" style={{ width: '40px', height: '3px', backgroundColor: 'var(--accent-color)' }}></div>
+
+                                        <p className="text-muted small mb-4 flex-grow-1 product-desc" style={{ lineHeight: '1.6', fontSize: '0.9rem' }}>
+                                            {prod.description}
+                                        </p>
+
+                                        <button className="btn btn-link text-decoration-none fw-bold p-0 text-start align-self-start product-btn" style={{ color: 'var(--accent-color)', fontSize: '0.9rem' }}>
+                                            View Details <i className="bi bi-arrow-right ms-1"></i>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         ))}
@@ -282,19 +300,69 @@ const HomePage = () => {
                     <div className="text-center mb-5">
                         <h2>About Alpha Tech</h2>
                     </div>
-                    <div className="row g-0 shadow-sm overflow-hidden rounded">
-                        <div className="col-md-6" style={{ minHeight: '400px' }}>
+                    <div className="row g-0 shadow-lg overflow-hidden rounded" data-aos="fade-up">
+                        <div className="col-lg-6 position-relative" style={{ minHeight: '500px' }}>
                             <img src="/img/banner-2.jpg" alt="Factory" className="img-fluid w-100 h-100" style={{ objectFit: 'cover' }} />
+                            <div className="position-absolute top-0 start-0 w-100 h-100" style={{ background: 'rgba(0,0,0,0.1)' }}></div>
                         </div>
-                        <div className="col-md-6 d-flex align-items-center" style={{ backgroundColor: 'var(--primary-color)', color: 'white' }}>
-                            <div className="p-5">
-                                <h3 className="text-white mb-4 display-6 fw-bold">Precision, Quality, Speed.</h3>
-                                <p className="lead mb-4" style={{ opacity: 0.95, lineHeight: '1.8' }}>
-                                    With a strong emphasis on quality, precision and speed, ALPHA Technical Rubber Products has been a specialist in the field of hydraulic, pneumatic and rotary seals for over two decades.
+                        <div className="col-lg-6 d-flex align-items-center" style={{ backgroundColor: 'var(--primary-color)', color: 'white' }}>
+                            <div className="p-5 text-start">
+                                <div className="mb-3">
+                                    <span className="text-uppercase fw-bold letter-spacing-2" style={{ color: 'var(--accent-color)', fontSize: '0.85rem' }}>Since 2005</span>
+                                </div>
+                                <h3 className="text-white mb-4 display-5 fw-bold">Precision. Quality. Speed.</h3>
+                                <p className="lead mb-4 text-white-50" style={{ lineHeight: '1.8' }}>
+                                    Your trusted partner for high-performance sealing solutions. We combine decades of expertise with cutting-edge manufacturing.
                                 </p>
-                                <p className="mb-0" style={{ opacity: 0.85, lineHeight: '1.7' }}>
-                                    We are an accredited ISO 9001 certified manufacturer known to design, manufacture & supply an array of Seals, O-Rings, and custom molded rubber parts for heavy industries across the globe.
+                                <p className="mb-4 text-white-50" style={{ lineHeight: '1.7' }}>
+                                    ALPHA Technical Rubber Products has been a specialist in the field of hydraulic, pneumatic and rotary seals for over two decades. We design and manufacture custom molded parts for heavy industries across the globe.
                                 </p>
+
+                                <div className="row g-3 mb-5">
+                                    <div className="col-md-6">
+                                        <div className="d-flex align-items-center">
+                                            <i className="bi bi-check-circle-fill me-3 fs-5" style={{ color: 'var(--accent-color)' }}></i>
+                                            <span className="fw-semibold">ISO 9001:2015 Certified</span>
+                                        </div>
+                                    </div>
+                                    <div className="col-md-6">
+                                        <div className="d-flex align-items-center">
+                                            <i className="bi bi-check-circle-fill me-3 fs-5" style={{ color: 'var(--accent-color)' }}></i>
+                                            <span className="fw-semibold">Global Distribution</span>
+                                        </div>
+                                    </div>
+                                    <div className="col-md-6">
+                                        <div className="d-flex align-items-center">
+                                            <i className="bi bi-check-circle-fill me-3 fs-5" style={{ color: 'var(--accent-color)' }}></i>
+                                            <span className="fw-semibold">Custom Engineering</span>
+                                        </div>
+                                    </div>
+                                    <div className="col-md-6">
+                                        <div className="d-flex align-items-center">
+                                            <i className="bi bi-check-circle-fill me-3 fs-5" style={{ color: 'var(--accent-color)' }}></i>
+                                            <span className="fw-semibold">AEO Accredited</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button className="btn btn-lg rounded-0 fw-bold px-4 py-2 text-white border-2"
+                                    onClick={() => navigate('/about')}
+                                    style={{
+                                        borderColor: 'var(--accent-color)',
+                                        backgroundColor: 'transparent',
+                                        transition: 'all 0.3s'
+                                    }}
+                                    onMouseOver={(e) => {
+                                        e.currentTarget.style.backgroundColor = 'var(--accent-color)';
+                                        e.currentTarget.style.borderColor = 'var(--accent-color)';
+                                    }}
+                                    onMouseOut={(e) => {
+                                        e.currentTarget.style.backgroundColor = 'transparent';
+                                        e.currentTarget.style.borderColor = 'var(--accent-color)';
+                                    }}
+                                >
+                                    Learn More About Us
+                                </button>
                             </div>
                         </div>
                     </div>

@@ -141,20 +141,11 @@ h6 {
   font-weight: 500;
 }
 
-/* Enhanced Featured Products with Solid Buttons */
+/* Enhanced Featured Products */
 .product-card {
   border: 1px solid #f0f0f0;
-  border-radius: 8px;
-  /* Slightly less rounded */
-  padding: 0;
-  background: white;
   transition: all 0.3s ease;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.03);
-  overflow: hidden;
-  position: relative;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
 }
 
 .product-card:hover {
@@ -163,49 +154,30 @@ h6 {
   border-color: var(--accent-color);
 }
 
-.product-card h5 {
-  font-size: 1.15rem;
-  margin: 1.25rem 1.25rem 0.5rem;
-  /* Adjusted margins */
-  color: var(--primary-color);
-  font-weight: 700;
+.product-card .img-fluid.transition-transform {
+  transition: transform 0.3s ease;
 }
 
-.product-card p {
-  padding: 0 1.25rem;
-  color: #666;
-  flex-grow: 1;
-  /* Pushes button down */
-  font-size: 0.95rem;
-  margin-bottom: 1.5rem;
+.product-card:hover .img-fluid.transition-transform {
+  transform: scale(1.05);
+  /* Subtle zoom on hover */
 }
 
-/* Solid Button Style for View Details */
+/* Reset rigid margins to allow Flexbox/Padding control in JS */
+.product-card h5,
+.product-card p,
 .product-card .btn-link {
-  margin: 0 1.25rem 1.25rem;
-  /* Spacing from bottom/sides */
-  display: inline-block;
-  background-color: var(--accent-color);
-  /* Default Navy Background */
-  color: white !important;
-  /* White Text */
-  text-align: center;
-  padding: 10px 20px;
-  border-radius: 4px;
-  /* Slight radius */
-  transition: all 0.3s ease;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.9rem;
-  border: none;
-  /* align-self: flex-start; */
-  /* Align left */
-  min-width: 140px;
+  margin: 0;
+  padding: 0;
 }
 
-.product-card .btn-link i {
-  margin-left: 5px;
-  transition: margin 0.2s;
+.product-card .btn-link {
+  transition: all 0.3s ease;
+}
+
+.product-card .btn-link:hover {
+  color: var(--primary-color) !important;
+  transform: translateX(5px);
 }
 
 .default-button {
@@ -219,22 +191,6 @@ h6 {
   font-weight: 600;
   font-size: 0.9rem;
   border: none;
-}
-
-.product-card:hover .btn-link {
-  background-color: var(--accent-color);
-  /* Orange on card hover (or button hover) */
-  color: white !important;
-}
-
-.product-card .btn-link:hover {
-  background-color: var(--primary-color);
-  /* Darker orange on direct button hover */
-  transform: translateY(-2px);
-}
-
-.product-card .btn-link:hover i {
-  margin-left: 8px;
 }
 
 /* Attractive Why Choose Us */
@@ -339,6 +295,48 @@ h6 {
   z-index: 2;
 }
 
+/* New Hero Styles */
+.hero-title {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  letter-spacing: -1px;
+}
+
+.hero-subtitle {
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  font-size: 1.35rem;
+  opacity: 0.95;
+}
+
+.btn-hero {
+  border-color: 2px solid var(--accent-color) !important;
+  color: white !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  padding: 12px 30px !important;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.btn-hero:hover {
+  background-color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+  color: white !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Responsive adjustments for hero */
+@media (max-width: 768px) {
+  .hero-slide-item {
+    height: 500px !important;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+}
+
 /* Buttons */
 .btn-industrial-primary {
   background-color: var(--primary-color) !important;
@@ -435,14 +433,24 @@ h2::after {
   border-radius: 2px;
 }
 
-/* Footer - Alpha Clean Design */
+/* Footer - Premium Light Industrial Design */
 .industrial-footer {
   background-color: #ffffff;
   color: var(--text-grey);
   padding: 5rem 0 2rem;
   font-size: 0.95rem;
   border-top: 1px solid #eaeaea;
-  /* Light separator instead of thick border */
+  position: relative;
+}
+
+.industrial-footer .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Footer Pattern Overlay (Removed for clean look) */
+.industrial-footer::before {
+  display: none;
 }
 
 /* Headings */
@@ -450,76 +458,83 @@ h2::after {
   color: var(--primary-color);
   font-weight: 800;
   margin-bottom: 1.5rem;
-  font-size: 1.1rem;
-  border-left: none;
-  /* Removed the orange side border */
-  padding-left: 0;
+  font-size: 1.15rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: relative;
+  display: inline-block;
+}
+
+.industrial-footer .footer-heading::after {
+  content: '';
+  display: block;
+  width: 30px;
+  height: 3px;
+  background-color: var(--accent-color);
+  margin-top: 8px;
+  border-radius: 2px;
 }
 
 /* Company Desc */
 .footer-company-desc {
   line-height: 1.7;
-  color: #6c757d;
-  font-size: 0.9rem;
-  max-width: 90%;
+  font-size: 0.95rem;
+  max-width: 95%;
+  color: var(--text-grey);
 }
 
 /* Links */
-.industrial-footer a {
+.footer-links li {
+  margin-bottom: 0.75rem;
+}
+
+.footer-links a {
   color: var(--text-grey);
   text-decoration: none;
-  transition: all 0.2s;
+  transition: all 0.3s ease;
+  display: inline-block;
+  font-weight: 500;
 }
 
-.industrial-footer a:hover {
-  color: #00acc1;
-  /* Cyan/Teal accent from image */
-  padding-left: 5px;
+.footer-links a:hover {
+  color: var(--accent-color) !important;
+  transform: translateX(5px);
+  padding-left: 0;
+  /* Reset previous padding if any */
 }
 
-.footer-links li,
+/* Contact List */
 .footer-contact li {
-  margin-bottom: 0.8rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: flex-start;
+  color: var(--text-grey);
 }
 
-/* Contact Icons */
 .footer-contact i {
-  color: #00acc1 !important;
-  /* Force the teal color */
+  color: var(--accent-color) !important;
+  font-size: 1.1rem;
 }
 
 /* Social Buttons */
 .social-btn {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  /* Square with slight radius looks more industrial */
   display: flex;
   align-items: center;
   justify-content: center;
   color: white !important;
-  transition: transform 0.2s;
-  padding: 0 !important;
+  transition: all 0.3s ease;
+  background-color: var(--primary-color);
+  /* Dark bg for icons */
 }
 
 .social-btn:hover {
   transform: translateY(-3px);
-  color: white !important;
-}
-
-.social-btn.facebook {
-  background-color: #3b5998;
-}
-
-.social-btn.twitter {
-  background-color: #1da1f2;
-}
-
-.social-btn.linkedin {
-  background-color: #0077b5;
-}
-
-.social-btn.youtube {
-  background-color: #ff0000;
+  background-color: var(--accent-color);
+  box-shadow: 0 5px 15px rgba(246, 153, 63, 0.3);
 }
 
 /* Copyright */

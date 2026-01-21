@@ -151,7 +151,7 @@ const Header = () => {
                         {isAuthenticated ? (
                             <NavLink className="btn btn-sm btn-industrial-outline text-dark border-dark" to="/dashboard">{translateSync('Dashboard')}</NavLink>
                         ) : (
-                            <NavLink className="btn btn-sm btn-industrial-primary" to="/login">{translateSync('Login')}</NavLink>
+                            <NavLink className="btn btn-sm btn-industrial-primary" to="/login" style={{ padding: "5px 20px !important" }}>{translateSync('Login')}</NavLink>
                         )}
 
                     </div>

@@ -8,49 +8,59 @@ const FooterPage = () => {
 
     return (
         <footer className="industrial-footer">
-            <div className="container">
-                <div className="row g-4">
+            <div className="container py-5">
+                <div className="row g-5 text-start">
                     {/* 1. Left: Company Info */}
-                    <div className="col-lg-4 col-md-6 mb-4 mb-lg-0">
-                        <Link to="/" className="d-block mb-3 text-decoration-none">
+                    <div className="col-lg-4 col-md-6">
+                        <Link to="/" className="d-block mb-4 text-decoration-none ps-0">
                             <img
                                 src="/img/alpha-logo.png"
-                                alt="Alpha Technical Rubber Products"
-                                style={{ height: '60px', objectFit: 'contain' }}
+                                alt="ALPHA Technical Rubber Products"
+                                style={{ height: '70px', objectFit: 'contain' }}
                             />
                         </Link>
-                        <p className="footer-company-desc">
-                            Specializing in high-performance rubber products for industrial applications.
-                            Quality, durability, and innovation since 2005. Premium rubber solutions for demanding industrial applications worldwide.
+                        <p className="footer-company-desc mb-4 text-start">
+                            Specializing in high-performance rubber products for industrial applications since 2005. We deliver quality, durability, and innovation for demanding industries worldwide.
                         </p>
+                        <div className="social-icons d-flex gap-3 justify-content-start">
+                            <a href="#" className="social-btn facebook"><i className="bi bi-facebook"></i></a>
+                            <a href="#" className="social-btn twitter"><i className="bi bi-twitter-x"></i></a>
+                            <a href="#" className="social-btn linkedin"><i className="bi bi-linkedin"></i></a>
+                            <a href="#" className="social-btn youtube"><i className="bi bi-youtube"></i></a>
+                        </div>
                     </div>
 
-                    {/* 2. Quick Links */}
-                    <div className="col-lg-2 col-md-6 mb-4 mb-lg-0">
-                        <h5 className="footer-heading">Quick Links</h5>
-                        <ul className="list-unstyled footer-links">
-                            <li><Link to="/about">About</Link></li>
+                    {/* 2. Quick Links - Matching Header */}
+                    <div className="col-lg-2 col-md-6">
+                        <h5 className="footer-heading mb-4 text-start">Quick Links</h5>
+                        <ul className="list-unstyled footer-links text-start">
+                            <li><Link to="/">Home</Link></li>
                             <li><Link to="/products">Products</Link></li>
+                            <li><Link to="/about">About Us</Link></li>
                             <li><Link to="/applications">Applications</Link></li>
-                            <li><Link to="/facilities">Facilities</Link></li>
-                            <li><Link to="/contact">Contact us</Link></li>
+                            <li><Link to="/resources">Resources</Link></li>
+                            <li><Link to="/contact">Contact Us</Link></li>
                         </ul>
                     </div>
 
-                    {/* 3. Address */}
-                    <div className="col-lg-3 col-md-6 mb-4 mb-lg-0">
-                        <h5 className="footer-heading">Address.</h5>
-                        <ul className="list-unstyled footer-contact">
-                            <li className="d-flex mb-3">
-                                <i className="bi bi-geo-alt mt-1 me-2 text-primary"></i>
-                                <span>Alpha Technical Rubber Products W.L.L</span>
+                    {/* 3. Global Headquarters (Address) */}
+                    <div className="col-lg-3 col-md-6">
+                        <h5 className="footer-heading mb-4 text-start">Headquarters</h5>
+                        <ul className="list-unstyled footer-contact text-start">
+                            <li className="d-flex mb-3 align-items-start">
+                                <i className="bi bi-geo-alt-fill mt-1 me-3 flex-shrink-0"></i>
+                                <span>
+                                    Alpha Technical Rubber Products W.L.L<br />
+                                    Bldg 123, Road 456, Block 789<br />
+                                    Manama, Kingdom of Bahrain
+                                </span>
                             </li>
-                            <li className="d-flex mb-3">
-                                <i className="bi bi-telephone mt-1 me-2 text-primary"></i>
+                            <li className="d-flex mb-3 align-items-center">
+                                <i className="bi bi-telephone-fill me-3 flex-shrink-0"></i>
                                 <span>+973 1700 6820</span>
                             </li>
-                            <li className="d-flex mb-3">
-                                <i className="bi bi-envelope mt-1 me-2 text-primary"></i>
+                            <li className="d-flex mb-3 align-items-center">
+                                <i className="bi bi-envelope-fill me-3 flex-shrink-0"></i>
                                 <span>sales@alphatechrubber.com</span>
                             </li>
                         </ul>
@@ -58,27 +68,42 @@ const FooterPage = () => {
 
                     {/* 4. Newsletter */}
                     <div className="col-lg-3 col-md-6">
-                        <h5 className="footer-heading">Newsletter</h5>
-                        <p className="text-muted small mb-3">Subscribe to our weekly Newsletter and receive updates via email.</p>
-                        <form className="mb-3 d-flex gap-2">
-                            <input type="email" className="form-control form-control-sm" placeholder="Email*" aria-label="Email" />
-                            <button className="btn btn-primary btn-sm" type="submit" style={{ backgroundColor: '#00acc1', borderColor: '#00acc1' }}>
-                                <i className="bi bi-send-fill"></i>
+                        <h5 className="footer-heading mb-4 text-start">Stay Updated</h5>
+                        <p className="text-muted small mb-4 text-start">Subscribe to our newsletter for the latest product updates and industry insights.</p>
+                        <form className="mb-4 position-relative">
+                            <input
+                                type="email"
+                                className="form-control form-control-lg pe-5"
+                                placeholder="Your Email Address"
+                                aria-label="Email"
+                                style={{ borderRadius: '4px', fontSize: '0.9rem', backgroundColor: '#f8f9fa' }}
+                            />
+                            <button
+                                className="btn position-absolute top-0 end-0 h-100 px-3"
+                                type="submit"
+                                style={{ border: 'none', background: 'transparent', color: 'var(--accent-color)' }}
+                            >
+                                <i className="bi bi-arrow-right fs-5"></i>
                             </button>
                         </form>
-                        <div className="social-icons d-flex gap-2">
-                            <a href="#" className="social-btn facebook"><i className="bi bi-facebook"></i></a>
-                            <a href="#" className="social-btn twitter"><i className="bi bi-twitter"></i></a>
-                            <a href="#" className="social-btn linkedin"><i className="bi bi-linkedin"></i></a>
-                            <a href="#" className="social-btn youtube"><i className="bi bi-youtube"></i></a>
-                        </div>
                     </div>
                 </div>
 
-                <div className="footer-bottom text-center mt-5 pt-4 border-top">
-                    <p className="mb-0 text-muted small">
-                        Copyright © Alpha Rubbers. <span style={{ color: '#00acc1' }}>♥</span> All Rights Reserved.2026
-                    </p>
+                <div className="footer-bottom mt-5 pt-4 border-top">
+                    <div className="row align-items-center">
+                        <div className="col-md-6 text-center text-md-start">
+                            <p className="mb-0 text-muted small">
+                                &copy; {new Date().getFullYear()} Alpha Technical Rubber Products. All Rights Reserved.
+                            </p>
+                        </div>
+                        <div className="col-md-6 text-center text-md-end mt-3 mt-md-0">
+                            <ul className="list-inline mb-0 small">
+                                <li className="list-inline-item"><a href="#" className="text-muted text-decoration-none">Privacy Policy</a></li>
+                                <li className="list-inline-item mx-2 text-muted">|</li>
+                                <li className="list-inline-item"><a href="#" className="text-muted text-decoration-none">Terms of Service</a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </footer>
