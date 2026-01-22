@@ -44,34 +44,30 @@ const AboutPage = () => {
                                 With over two decades of experience, we serve heavy industries across the globe, providing critical sealing solutions that ensure operational efficiency and safety. Our state-of-the-art facility in Bahrain utilizes advanced molding technologies to deliver products that meet strict international standards including ISO 9001:2015.
                             </p>
 
-                            <div className="row g-4 mb-4">
-                                <div className="col-md-6">
-                                    <div className="d-flex align-items-center">
-                                        <div className="bg-light rounded-circle p-3 me-3 text-primary">
-                                            <i className="bi bi-globe fs-4"></i>
-                                        </div>
-                                        <div>
-                                            <h6 className="fw-bold mb-0">Global Reach</h6>
-                                            <small className="text-muted">Exporting to 20+ Countries</small>
-                                        </div>
+                            {/* <div className="d-flex justify-content-center gap-5 mb-4 flex-wrap">
+                                <div className="d-flex flex-column align-items-center text-center">
+                                    <div className="bg-light rounded-circle p-3 mb-3 text-primary">
+                                        <i className="bi bi-globe fs-4"></i>
+                                    </div>
+                                    <div>
+                                        <h6 className="fw-bold mb-0">Global Reach</h6>
+                                        <small className="text-muted">Exporting to 20+ Countries</small>
                                     </div>
                                 </div>
-                                <div className="col-md-6">
-                                    <div className="d-flex align-items-center">
-                                        <div className="bg-light rounded-circle p-3 me-3 text-primary">
-                                            <i className="bi bi-award fs-4"></i>
-                                        </div>
-                                        <div>
-                                            <h6 className="fw-bold mb-0">Certified Quality</h6>
-                                            <small className="text-muted">ISO 9001:2015 Accredited</small>
-                                        </div>
+                                <div className="d-flex flex-column align-items-center text-center">
+                                    <div className="bg-light rounded-circle p-3 mb-3 text-primary">
+                                        <i className="bi bi-award fs-4"></i>
+                                    </div>
+                                    <div>
+                                        <h6 className="fw-bold mb-0">Certified Quality</h6>
+                                        <small className="text-muted">ISO 9001:2015 Accredited</small>
                                     </div>
                                 </div>
                             </div>
 
                             <button className="btn btn-primary px-4 py-2" style={{ backgroundColor: 'var(--accent-color)', border: 'none' }} onClick={() => navigate('/contact')}>
                                 Contact Our Team
-                            </button>
+                            </button> */}
                         </div>
                         <div className="col-lg-6" data-aos="zoom-in">
                             <div className="position-relative">
