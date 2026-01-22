@@ -90,7 +90,7 @@ const FooterPage = () => {
                     </div>
                 </div>
 
-                <div className="footer-bottom mt-5 pt-4 border-top">
+                <div className="footer-bottom mt-4 border-top">
                     <div className="row align-items-center">
                         <div className="col-md-6 text-center text-md-start">
                             <p className="mb-0 text-secondary small">
