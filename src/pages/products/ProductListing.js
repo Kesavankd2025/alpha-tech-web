@@ -68,7 +68,7 @@ const ProductListing = () => {
     return (
         <div className="product-listing-page pb-5" style={{ marginTop: '80px', backgroundColor: '#f8f9fa' }}>
             {/* 1. Enhanced Breadcrumb Header */}
-            <div className="bg-white border-bottom py-3 mb-4 shadow-sm sticky-top" style={{ top: '100px', zIndex: 900 }}>
+            {/* <div className="bg-white border-bottom py-3 mb-4 shadow-sm sticky-top" style={{ top: '100px', zIndex: 900 }}>
                 <div className="container">
                     <nav aria-label="breadcrumb">
                         <ol className="breadcrumb mb-0">
@@ -78,7 +78,7 @@ const ProductListing = () => {
                         </ol>
                     </nav>
                 </div>
-            </div>
+            </div> */}
 
             <div className="container">
                 {/* 2. Modern Product Intro Section */}
@@ -104,7 +104,7 @@ const ProductListing = () => {
                                     <span className="badge " style={{ backgroundColor: "var(--accent-color)" }}>In Stock</span>
                                 </div>
                                 <div className="mb-4" style={{ height: '4px', width: '80px', backgroundColor: 'var(--accent-color)', borderRadius: '2px' }}></div>
-                                <p className="text-secondary lead mb-4" style={{ maxWidth: '600px' }}>{productData.description}</p>
+                                <p className=" lead mb-4" style={{ maxWidth: '600px' }}>{productData.description}</p>
 
                                 <div className="row g-3 mt-auto">
                                     <div className="col-md-4">
@@ -185,7 +185,13 @@ const ProductListing = () => {
                                                     type="number"
                                                     className="form-control form-control-sm text-center border-secondary-subtle mx-auto"
                                                     min="1"
-                                                    style={{ width: '70px' }}
+                                                    style={{
+                                                        width: '70px',
+                                                        padding: '0.25rem 20px 0.25rem 0.5rem !important', /* Right padding for arrows */
+                                                        height: 'calc(1.5em + 0.5rem + 2px) !important',
+                                                        fontSize: '0.875rem !important',
+                                                        lineHeight: '1.5 !important'
+                                                    }}
                                                     value={quantities[item.partNo] || 1}
                                                     onChange={(e) => handleQuantityChange(item.partNo, e.target.value)}
                                                 />
@@ -247,6 +253,12 @@ const ProductListing = () => {
                     background-color: var(--primary-color);
                     border-color: var(--primary-color);
                     color: white;
+                }
+
+                /* Always show number input arrows */
+                input[type=number]::-webkit-inner-spin-button, 
+                input[type=number]::-webkit-outer-spin-button { 
+                    opacity: 1;
                 }
                 `}
             </style>

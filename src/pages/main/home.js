@@ -288,10 +288,10 @@ const HomePage = () => {
                                     <span className="text-uppercase fw-bold letter-spacing-2" style={{ color: 'var(--accent-color)', fontSize: '0.85rem' }}>Since 2005</span>
                                 </div>
                                 <h3 className="text-white mb-4 display-5 fw-bold">Precision. Quality. Speed.</h3>
-                                <p className="mb-4 text-white-50" style={{ lineHeight: '1.8', fontSize: '1.05rem' }}>
+                                <p className="mb-4 text-white-100" style={{ fontSize: '1.05rem', textAlign: "justify" }}>
                                     Your trusted partner for high-performance sealing solutions. We combine decades of expertise with cutting-edge manufacturing.
                                 </p>
-                                <p className="mb-4 text-white-50" style={{ lineHeight: '1.8', fontSize: '1.05rem' }}>
+                                <p className="mb-4 text-white-100" style={{ fontSize: '1.05rem', textAlign: "justify" }}>
                                     ALPHA Technical Rubber Products has been a specialist in the field of hydraulic, pneumatic and rotary seals for over two decades. We design and manufacture custom molded parts for heavy industries across the globe.
                                 </p>
 

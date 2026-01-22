@@ -39,6 +39,8 @@ import ResourcesPage from './pages/main/resources';
 import { useTranslation } from './context/TranslationContext';
 // import LanguageSwitcher from './components/LanguageSwitcher';
 
+import ProductsMain from './pages/products/ProductsMain';
+
 function App() {
   const { translateSync, currentLanguage } = useTranslation();
 
@@ -63,7 +65,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
 
         {/* Products */}
-        <Route path="/products" element={<HomePage />} />
+        <Route path="/products" element={<ProductsMain />} />
         <Route path="/products/:subcategoryId" element={<ProductListing />} />
         <Route path="/cart" element={<CartPage />} />
 

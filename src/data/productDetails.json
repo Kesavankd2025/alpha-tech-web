@@ -1,7 +1,7 @@
 {
     "o-rings": {
         "title": "O-Rings & Quad Rings",
-        "description": "O-Rings are mostly used as a static seals in-between flanges or joint sealing.",
+        "description": "O-Rings are mostly used as static seals in-between flanges or joint sealing. We stock standard JIS and AS sizes.",
         "image": "/img/product-category-3.png",
         "specs": [
             {
@@ -11,22 +11,6 @@
                 "thk": "1.30",
                 "material": "FKM",
                 "mouldNo": "SIA-2374"
-            },
-            {
-                "partNo": "OR13000100-08",
-                "id": "1.00",
-                "od": "3.60",
-                "thk": "1.30",
-                "material": "NBR",
-                "mouldNo": "SIA-3878"
-            },
-            {
-                "partNo": "OR15000100-43",
-                "id": "1.00",
-                "od": "4.00",
-                "thk": "1.50",
-                "material": "SILICON",
-                "mouldNo": "SIA-4245"
             },
             {
                 "partNo": "OR16000100-32",
@@ -45,28 +29,76 @@
                 "mouldNo": "SIA-1102"
             },
             {
-                "partNo": "OR20000200-12",
-                "id": "2.00",
-                "od": "6.00",
-                "thk": "2.00",
-                "material": "NBR",
-                "mouldNo": "SIA-1567"
+                "partNo": "OR-JIS-G25",
+                "id": "24.40",
+                "od": "30.60",
+                "thk": "3.10",
+                "material": "NBR/FKM",
+                "mouldNo": "JIS-G25"
             },
             {
-                "partNo": "OR24000240-55",
-                "id": "2.40",
-                "od": "7.20",
-                "thk": "2.40",
-                "material": "SILICON",
-                "mouldNo": "SIA-3982"
+                "partNo": "OR-JIS-G30",
+                "id": "29.40",
+                "od": "35.60",
+                "thk": "3.10",
+                "material": "NBR/FKM",
+                "mouldNo": "JIS-G30"
             },
             {
-                "partNo": "OR26200262-99",
-                "id": "2.62",
-                "od": "7.86",
-                "thk": "2.62",
-                "material": "EPDM",
-                "mouldNo": "SIA-8834"
+                "partNo": "OR-JIS-G35",
+                "id": "34.40",
+                "od": "40.60",
+                "thk": "3.10",
+                "material": "NBR/FKM",
+                "mouldNo": "JIS-G35"
+            },
+            {
+                "partNo": "OR-JIS-G40",
+                "id": "39.40",
+                "od": "45.60",
+                "thk": "3.10",
+                "material": "NBR/FKM",
+                "mouldNo": "JIS-G40"
+            },
+            {
+                "partNo": "OR-JIS-G45",
+                "id": "44.40",
+                "od": "50.60",
+                "thk": "3.10",
+                "material": "NBR/FKM",
+                "mouldNo": "JIS-G45"
+            },
+            {
+                "partNo": "OR-AS-001",
+                "id": "0.74",
+                "od": "2.78",
+                "thk": "1.02",
+                "material": "Standard",
+                "mouldNo": "AS-001"
+            },
+            {
+                "partNo": "OR-AS-002",
+                "id": "1.07",
+                "od": "3.61",
+                "thk": "1.27",
+                "material": "Standard",
+                "mouldNo": "AS-002"
+            },
+            {
+                "partNo": "OR-AS-003",
+                "id": "1.42",
+                "od": "4.46",
+                "thk": "1.52",
+                "material": "Standard",
+                "mouldNo": "AS-003"
+            },
+            {
+                "partNo": "OR-AS-010",
+                "id": "6.07",
+                "od": "9.63",
+                "thk": "1.78",
+                "material": "Standard",
+                "mouldNo": "AS-010"
             }
         ]
     },
@@ -137,12 +169,20 @@
         "image": "/img/bps-wheel-stopper.png",
         "specs": [
             {
-                "partNo": "DH-PB-5",
-                "desc": "Rubber Wheel Stopper - 50cm",
-                "size": "500x150x100mm",
-                "weight": "4.5kg",
+                "partNo": "DH-PB-5-90CM",
+                "desc": "Rubber Wheel Stopper - 90cm",
+                "size": "900x150x100mm",
+                "weight": "-",
                 "material": "Rubber",
                 "pcs": "316"
+            },
+            {
+                "partNo": "PB-4-550MM",
+                "desc": "Wheel Stopper Heavy Duty",
+                "size": "550mm",
+                "weight": "-",
+                "material": "Rubber",
+                "pcs": "395"
             },
             {
                 "partNo": "DH-PB-2",
@@ -153,12 +193,20 @@
                 "pcs": "6"
             },
             {
-                "partNo": "PB-4-550",
-                "desc": "Wheel Stopper Heavy Duty",
-                "size": "550x150x100mm",
-                "weight": "5kg",
+                "partNo": "DH-PB-2-RAISE",
+                "desc": "6 Foot Wheel Stopper (Raised)",
+                "size": "1830x150x100mm",
+                "weight": "-",
                 "material": "Rubber",
-                "pcs": "395"
+                "pcs": "0"
+            },
+            {
+                "partNo": "DH-PB-4",
+                "desc": "Home Wheel Stopper",
+                "size": "Standard",
+                "weight": "-",
+                "material": "Rubber",
+                "pcs": "-"
             }
         ]
     },
@@ -182,18 +230,28 @@
         "image": "/img/bps-corner-guard.png",
         "specs": [
             {
-                "partNo": "CG-800-B",
-                "desc": "Corner Guard 800mm Black",
-                "size": "800x100x10mm",
-                "weight": "2.5kg",
-                "material": "Rubber"
+                "partNo": "DH-129 (L)",
+                "desc": "Corner Guard 1000mm",
+                "size": "1000x100x10mm",
+                "weight": "-",
+                "material": "Rubber",
+                "pcs": "334"
             },
             {
-                "partNo": "CG-1000-Y",
-                "desc": "Corner Guard 1000mm Yellow/Black",
-                "size": "1000x100x10mm",
-                "weight": "3.2kg",
-                "material": "Rubber"
+                "partNo": "DH-128",
+                "desc": "Corner Guard 800mm",
+                "size": "800x100x10mm",
+                "weight": "-",
+                "material": "Rubber",
+                "pcs": "123"
+            },
+            {
+                "partNo": "CG-STD",
+                "desc": "Standard Corner Guard",
+                "size": "800mm",
+                "weight": "2.5kg",
+                "material": "Rubber",
+                "pcs": "50"
             }
         ]
     },
@@ -203,11 +261,36 @@
         "image": "/img/bps-wall-guard.png",
         "specs": [
             {
-                "partNo": "WG-1000-D",
-                "desc": "D-Shape Wall Guard",
-                "size": "1000x100x100mm",
-                "weight": "8kg",
-                "material": "EPDM"
+                "partNo": "WP-4",
+                "desc": "Wall Protector",
+                "size": "Standard",
+                "weight": "-",
+                "material": "Rubber",
+                "pcs": "6"
+            },
+            {
+                "partNo": "WG-200x25",
+                "desc": "Wall Protector (With Two Yellow Strip)",
+                "size": "200mmx25mm x 3m",
+                "weight": "-",
+                "material": "Rubber",
+                "pcs": "25"
+            },
+            {
+                "partNo": "WG-200x30",
+                "desc": "Wall Protector (With Yellow Strip)",
+                "size": "200mmx30mm x 3m",
+                "weight": "-",
+                "material": "Rubber",
+                "pcs": "66"
+            },
+            {
+                "partNo": "WG-COL-80",
+                "desc": "Wall Protector (Column Guard)",
+                "size": "80cm",
+                "weight": "-",
+                "material": "Rubber",
+                "pcs": "120"
             }
         ]
     },

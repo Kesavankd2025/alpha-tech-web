@@ -25,22 +25,22 @@ const AboutPage = () => {
             <section className="text-white py-5 position-relative" style={{ background: 'linear-gradient(rgba(26, 34, 56, 0.9), rgba(26, 34, 56, 0.9)), url(/img/banner-1.jpg) center/cover', minHeight: '400px', display: 'flex', alignItems: 'center' }}>
                 <div className="container text-center">
                     <h1 className="fw-bold display-4 mb-3 text-white" data-aos="fade-up">About Alpha Tech</h1>
-                    <p className="lead mb-0 text-white-50" data-aos="fade-up" data-aos-delay="100">Precision Engineering. Global Standards. Trusted Solutions.</p>
+                    <p className="lead mb-0 text-white-100" data-aos="fade-up" data-aos-delay="100">Precision Engineering. Global Standards. Trusted Solutions.</p>
                 </div>
             </section>
 
             {/* 2. Company Profile */}
             <section className="py-5 bg-white">
                 <div className="container py-4">
-                    <div className="row align-items-center g-5">
-                        <div className="col-lg-6" data-aos="fade-right">
+                    <div className="row align-items-start g-5">
+                        <div className="col-lg-6 text-start" data-aos="fade-right">
                             <h5 className="text-primary fw-bold text-uppercase mb-3">Who We Are</h5>
                             <h2 className="fw-bold mb-4 display-6 text-primary">Excellence in Rubber Manufacturing Since 2005</h2>
                             <div className="mb-4" style={{ height: '4px', width: '60px', backgroundColor: 'var(--accent-color)' }}></div>
-                            <p className="fs-5 text-dark mb-4 fw-normal">
+                            <p className="fs-5 text-dark mb-4 fw-normal" style={{ textAlign: 'justify' }}>
                                 Alpha Technical Rubber Products is a premier manufacturer specializing in high-performance hydraulic, pneumatic, and rotary seals.
                             </p>
-                            <p className="text-dark mb-4 lh-lg">
+                            <p className="text-dark mb-4 lh-lg" style={{ textAlign: 'justify' }}>
                                 With over two decades of experience, we serve heavy industries across the globe, providing critical sealing solutions that ensure operational efficiency and safety. Our state-of-the-art facility in Bahrain utilizes advanced molding technologies to deliver products that meet strict international standards including ISO 9001:2015.
                             </p>
 
@@ -75,7 +75,7 @@ const AboutPage = () => {
                         </div>
                         <div className="col-lg-6" data-aos="zoom-in">
                             <div className="position-relative">
-                                <img src="/img/about-us-side.png" alt="Factory Interior" className="img-fluid rounded shadow-lg" />
+                                <img src="/img/about-new-side.png" alt="Factory Interior" className="img-fluid rounded shadow-lg" />
                                 <div className="position-absolute bottom-0 start-0 bg-white p-4 m-4 rounded shadow d-none d-md-block" style={{ maxWidth: '250px' }}>
                                     <h3 className="fw-bold text-primary mb-0">20+</h3>
                                     <p className="mb-0 text-muted small">Years of Engineering Excellence</p>
@@ -91,7 +91,7 @@ const AboutPage = () => {
                 <div className="container py-4">
                     <div className="text-center mb-5" data-aos="fade-up">
                         <h2 className="fw-bold text-primary">Our Core Values</h2>
-                        <p className="text-secondary fw-normal">The principles that drive our innovation and success.</p>
+                        <p className=" fw-normal">The principles that drive our innovation and success.</p>
                     </div>
                     <div className="row g-4">
                         {[
@@ -106,7 +106,7 @@ const AboutPage = () => {
                                         <i className={`bi ${val.icon}`}></i>
                                     </div>
                                     <h5 className="fw-bold mb-3">{val.title}</h5>
-                                    <p className="text-secondary small mb-0">{val.desc}</p>
+                                    <p className=" small mb-0">{val.desc}</p>
                                 </div>
                             </div>
                         ))}

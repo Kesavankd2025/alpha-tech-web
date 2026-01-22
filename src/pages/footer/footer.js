@@ -70,7 +70,7 @@ const FooterPage = () => {
                     {/* 4. Newsletter */}
                     <div className="col-lg-3 col-md-6">
                         <h5 className="footer-heading mb-4 text-start">Stay Updated</h5>
-                        <p className="text-secondary small mb-4 text-start">Subscribe to our newsletter for the latest product updates and industry insights.</p>
+                        <p className=" small mb-4 text-start">Subscribe to our newsletter for the latest product updates and industry insights.</p>
                         <form className="mb-4 position-relative">
                             <input
                                 type="email"
@@ -93,15 +93,15 @@ const FooterPage = () => {
                 <div className="footer-bottom mt-4 border-top">
                     <div className="row align-items-center">
                         <div className="col-md-6 text-center text-md-start">
-                            <p className="mb-0 text-secondary small">
+                            <p className="mb-0  small">
                                 &copy; {new Date().getFullYear()} Alpha Technical Rubber Products. All Rights Reserved.
                             </p>
                         </div>
                         <div className="col-md-6 text-center text-md-end mt-3 mt-md-0">
                             <ul className="list-inline mb-0 small">
-                                <li className="list-inline-item"><a href="#" className="text-secondary text-decoration-none">Privacy Policy</a></li>
-                                <li className="list-inline-item mx-2 text-secondary">|</li>
-                                <li className="list-inline-item"><a href="#" className="text-secondary text-decoration-none">Terms of Service</a></li>
+                                <li className="list-inline-item"><a href="#" className=" text-decoration-none">Privacy Policy</a></li>
+                                <li className="list-inline-item mx-2 ">|</li>
+                                <li className="list-inline-item"><a href="#" className=" text-decoration-none">Terms of Service</a></li>
                             </ul>
                         </div>
                     </div>

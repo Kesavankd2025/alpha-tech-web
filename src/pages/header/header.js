@@ -135,7 +135,7 @@ const Header = () => {
                                     style={{ width: '200px' }}
                                 />
                             ) : (
-                                <i className="bi bi-search fs-5 text-secondary cursor-pointer" onClick={() => setSearchOpen(true)} style={{ cursor: 'pointer', color: 'var(--primary-color)' }}></i>
+                                <i className="bi bi-search fs-5  cursor-pointer" onClick={() => setSearchOpen(true)} style={{ cursor: 'pointer', color: 'var(--primary-color)' }}></i>
                             )}
                         </div>
 

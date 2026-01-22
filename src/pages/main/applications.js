@@ -77,7 +77,7 @@ const ApplicationsPage = () => {
                     <div className="col-lg-8 text-center" data-aos="fade-up">
                         <div className="mx-auto mb-4" style={{ height: '3px', width: '80px', backgroundColor: 'var(--accent-color)' }}></div>
                         <h4 className="fw-bold mb-4 text-primary">Engineered for Extremes</h4>
-                        <p className="text-secondary" style={{ lineHeight: '1.8', fontSize: '1.05rem' }}>
+                        <p className="" style={{ lineHeight: '1.8', fontSize: '1.05rem' }}>
                             Products built for demanding industrial environments, where heat, abrasion, chemicals, and continuous operations prevail. We support these sectors with rubber solutions that help <span className="fw-bold text-dark">protect equipment, reduce wear, and extend service life.</span> From plant maintenance to critical production areas, our focus is on durability, safety, and reliability under harsh conditions.
                         </p>
                     </div>
@@ -99,7 +99,7 @@ const ApplicationsPage = () => {
                         <div className={`col-md-6 text-start ${index % 2 !== 0 ? 'order-md-1' : ''}`}>
                             <h2 className="fw-bold mb-3 text-primary">{app.title}</h2>
                             <div className="mb-4" style={{ height: '3px', width: '60px', backgroundColor: 'var(--accent-color)' }}></div>
-                            <p className="text-secondary mb-4" style={{ fontSize: '0.95rem', lineHeight: '1.7' }}>{app.description}</p>
+                            <p className=" mb-4" style={{ fontSize: '0.95rem', lineHeight: '1.7' }}>{app.description}</p>
                             <h6 className="fw-bold text-uppercase mb-3 text-primary">Key Applications & Features:</h6>
                             <ul className="list-unstyled">
                                 {app.features.map((feat, i) => (

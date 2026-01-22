@@ -720,14 +720,15 @@ h2::after {
   font-family: 'Inter', sans-serif !important;
   box-shadow: none !important;
   padding: 16px !important;
+  background: white !important;
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .Toastify__toast-theme--light.Toastify__toast--success {
-  /* background-color: white !important; */
+  background-color: white !important;
   color: var(--primary-color) !important;
-  border: 1px solid var(--accent-color) !important;
-  border-left: 6px solid var(--accent-color) !important;
+  border: 1px solid var(--primary-color) !important;
+  border-left: 6px solid var(--primary-color) !important;
 }
 
 .Toastify__toast-theme--light.Toastify__toast--error {
@@ -738,11 +739,11 @@ h2::after {
 }
 
 .Toastify__progress-bar--success {
-  background: var(--accent-color) !important;
+  background: var(--primary-color) !important;
 }
 
 .Toastify__progress-bar--error {
-  background: #e53e3e !important;
+  background: var(--primary-color) !important;
 }
 
 .Toastify__close-button--light {
@@ -757,4 +758,10 @@ h2::after {
 
 .Toastify__toast-icon svg {
   fill: var(--accent-color) !important;
+}
+
+/* Globally force number input spin buttons to be always visible */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  opacity: 1 !important;
 }

@@ -27,7 +27,7 @@ const CartPage = () => {
                 {cartItems.length === 0 ? (
                     <div className="text-center py-5">
                         <div className="mb-4">
-                            <i className="bi bi-cart3 text-secondary opacity-25" style={{ fontSize: '5rem' }}></i>
+                            <i className="bi bi-cart3  opacity-25" style={{ fontSize: '5rem' }}></i>
                         </div>
                         <h3 className="fw-bold text-dark mb-3">Your cart is empty</h3>
                         <p className="text-muted mb-4">Looks like you haven't added any products for inquiry yet.</p>

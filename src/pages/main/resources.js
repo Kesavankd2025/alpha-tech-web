@@ -58,7 +58,7 @@ const ResourcesPage = () => {
                                     <i className={`bi ${res.icon}`}></i>
                                 </div>
                                 <h5 className="fw-bold mb-3">{res.title}</h5>
-                                <p className="text-secondary small mb-4 flex-grow-1">{res.desc}</p>
+                                <p className=" small mb-4 flex-grow-1">{res.desc}</p>
                                 <button className="btn btn-outline-primary btn-sm stretched-link" style={{ borderColor: 'var(--primary-color)', color: 'var(--primary-color)' }}>
                                     Download <i className="bi bi-download ms-2"></i>
                                 </button>
@@ -76,7 +76,7 @@ const ResourcesPage = () => {
                     </div>
                     <div className="col-md-8 p-5 d-flex flex-column justify-content-center text-start">
                         <h3 className="fw-bold mb-3 text-primary">Download Full Product Catalog</h3>
-                        <p className="text-secondary mb-4">Get access to our complete range of industrial seals, gaskets, and rubber products with detailed specifications.</p>
+                        <p className=" mb-4">Get access to our complete range of industrial seals, gaskets, and rubber products with detailed specifications.</p>
                         <div>
                             <button className="btn btn-primary px-4 py-2 fw-bold" style={{ backgroundColor: 'var(--accent-color)', border: 'none' }}>
                                 Download PDF Catalog
