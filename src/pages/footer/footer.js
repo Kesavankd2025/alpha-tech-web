@@ -15,7 +15,7 @@ const FooterPage = () => {
                         <Link to="/" className="d-block mb-4 text-decoration-none ps-0">
                             <img
                                 src="/img/alpha-logo.png"
-                                alt="ALPHA Technical Rubber Products"
+                                alt="ALPHA Technical Rubber Sheets"
                                 style={{ height: '70px', objectFit: 'contain' }}
                             />
                         </Link>
@@ -51,7 +51,7 @@ const FooterPage = () => {
                             <li className="d-flex mb-3 align-items-start">
                                 <i className="bi bi-geo-alt-fill mt-1 me-3 flex-shrink-0"></i>
                                 <span>
-                                    Alpha Technical Rubber Products W.L.L<br />
+                                    Alpha Technical Rubber Sheets W.L.L<br />
                                     Bldg 123, Road 456, Block 789<br />
                                     Manama, Kingdom of Bahrain
                                 </span>

@@ -40,6 +40,8 @@ import { useTranslation } from './context/TranslationContext';
 // import LanguageSwitcher from './components/LanguageSwitcher';
 
 import ProductsMain from './pages/products/ProductsMain';
+import SubcategoryVariants from './pages/products/SubcategoryVariants';
+import ProductSpecs from './pages/products/ProductSpecs';
 
 function App() {
   const { translateSync, currentLanguage } = useTranslation();
@@ -66,7 +68,9 @@ function App() {
 
         {/* Products */}
         <Route path="/products" element={<ProductsMain />} />
-        <Route path="/products/:subcategoryId" element={<ProductListing />} />
+        {/* <Route path="/products/:subcategoryId" element={<ProductListing />} /> */}
+        <Route path="/products/:subcategoryId" element={<SubcategoryVariants />} />
+        <Route path="/products/:subcategoryId/:variantId" element={<ProductSpecs />} />
         <Route path="/cart" element={<CartPage />} />
 
         {/* New Pages */}

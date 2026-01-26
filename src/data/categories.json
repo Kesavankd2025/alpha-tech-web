@@ -45,14 +45,10 @@
     },
     {
         "id": "rubber",
-        "title": "Rubber Products",
+        "title": "Rubber Sheets",
         "description": "Industrial rubber sheets, mats, and custom molded parts.",
         "icon": "bi-layers-half",
         "subcategories": [
-            {
-                "id": "rubber-sheets",
-                "name": "Rubber Sheets"
-            },
             {
                 "id": "mats",
                 "name": "Mats"

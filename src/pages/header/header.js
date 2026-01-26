@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { NavLink, useNavigate, useLocation, Link } from "react-router-dom";
 import { useSelector } from 'react-redux';
@@ -14,7 +13,7 @@ const Header = () => {
     // State
     const [scrolled, setScrolled] = useState(false);
     const [showMegaMenu, setShowMegaMenu] = useState(false);
-    const [searchOpen, setSearchOpen] = useState(false);
+    const [showSearch, setShowSearch] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
     // Scroll listener
@@ -47,7 +46,7 @@ const Header = () => {
                     <img
                         src="/img/alpha-logo.png"
                         alt="ALPHA Technical Rubber Products"
-                        style={{ height: '55px', objectFit: 'contain' }} // Fixed height, scaling properly
+                        style={{ height: '55px', objectFit: 'contain', transform: 'scale(1.6)', transformOrigin: 'left center' }} // Fixed height, scaling properly
                     />
                 </NavLink>
 
@@ -122,23 +121,12 @@ const Header = () => {
                     </ul>
 
                     {/* 3. Right: Icons */}
-                    <div className="d-flex align-items-center gap-3">
-                        {/* Search */}
-                        <div className="search-wrapper position-relative">
-                            {searchOpen ? (
-                                <input
-                                    type="text"
-                                    className="form-control form-control-sm"
-                                    placeholder="Search..."
-                                    autoFocus
-                                    onBlur={() => setSearchOpen(false)}
-                                    style={{ width: '200px' }}
-                                />
-                            ) : (
-                                <i className="bi bi-search fs-5  cursor-pointer" onClick={() => setSearchOpen(true)} style={{ cursor: 'pointer', color: 'var(--primary-color)' }}></i>
-                            )}
+                    {/* 3. Right: Icons */}
+                    <div className="d-flex align-items-center gap-4">
+                        {/* Search Icon */}
+                        <div className="search-icon-wrapper" style={{ cursor: 'pointer' }} onClick={() => setShowSearch(!showSearch)}>
+                            <i className={`bi ${showSearch ? 'bi-x-lg' : 'bi-search'} fs-5`} style={{ color: 'var(--primary-color)' }}></i>
                         </div>
-
                         {/* Cart */}
                         <div className="cart-wrapper position-relative" style={{ cursor: 'pointer' }} onClick={() => navigate('/cart')}>
                             <i className="bi bi-cart3 fs-4" style={{ color: 'var(--primary-color)' }}></i>
@@ -151,9 +139,8 @@ const Header = () => {
                         {isAuthenticated ? (
                             <NavLink className="btn btn-sm btn-industrial-outline text-dark border-dark" to="/dashboard">{translateSync('Dashboard')}</NavLink>
                         ) : (
-                            <NavLink className="btn btn-sm btn-industrial-primary" to="/login" style={{ padding: "5px 20px !important" }}>{translateSync('Login')}</NavLink>
+                            <NavLink className="btn btn-sm btn-industrial-primarys" to="/login" style={{ padding: "5px 15px", backgroundColor: "var(--primary-color)", color: "white", border: "none" }}>{translateSync('Login')}</NavLink>
                         )}
-
                     </div>
                 </div>
             </div>
